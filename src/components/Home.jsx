@@ -4,6 +4,7 @@ import {Link as LinkScroll} from "react-scroll";
 import welcomeBg from "../assets/Home-Hero-Image.jpg";
 import decoration from "../assets/Decoration.svg";
 import ThreeColumns from "./HomeComponents/ThreeColumns";
+import SimpleSteps from "./HomeComponents/SimpleSteps";
 
 const Home = () => {
     return (
@@ -20,7 +21,7 @@ const Home = () => {
                         </section>
                         <nav className="header__menu">
                             <LinkScroll to="" className="menu__btn">Start</LinkScroll>
-                            <LinkScroll to="" className="menu__btn">O co chodzi?</LinkScroll>
+                            <LinkScroll to="simpleStepsID" smooth={true} duration={500} className="menu__btn">O co chodzi?</LinkScroll>
                             <LinkScroll to="" className="menu__btn">O nas</LinkScroll>
                             <LinkScroll to="" className="menu__btn">Fundacja i organizacje</LinkScroll>
                             <LinkScroll to="" className="menu__btn">Kontakt</LinkScroll>
@@ -37,6 +38,7 @@ const Home = () => {
                 </section>
             </div>
             <ThreeColumns />
+            <SimpleSteps />
         </>
     );
 };

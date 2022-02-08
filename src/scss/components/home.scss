@@ -17,7 +17,7 @@
     .header {
       display: flex;
       flex-direction: column;
-      margin-top: 46px;
+      margin-top: 25px;
       .header__loginArea {
         display: flex;
         justify-content: flex-end;
@@ -74,17 +74,7 @@
         display: flex;
         justify-content: space-evenly;
         .main__btn {
-          width: 310px;
-          height: 120px;
-          font-size: 2rem;
-          color: $color-darkGray;
-          text-decoration: none;
-          border: 1px solid $color-darkGray;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          line-height: 2.5rem;
+          @include giveBtn;
         }
       }
     }

@@ -1,0 +1,52 @@
+.simpleSteps {
+  height: 624px;
+  margin-top: 55px;
+  margin-bottom: 80px;
+  .simpleSteps__title {
+    font-size: 2.375rem;
+    text-align: center;
+  }
+  .decoration {
+    @include decorationLine;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .simpleSteps__steps {
+    display: flex;
+    justify-content: space-around;
+    height: 325px;
+    background-color: $color-white;
+    margin-bottom: 35px;
+    .steps__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 10%;
+      .item__icon {
+        width: 83px;
+        height: 83px;
+        margin-bottom: 14px;
+      }
+      .item__title {
+        font-size: 1.125rem;
+        margin-bottom: 5px;
+        text-align: center;
+      }
+      hr {
+        width: 80px;
+      }
+      .item__desc {
+        font-size: 1rem;
+        text-align: center;
+      }
+    }
+  }
+  .simpleSteps__btn {
+    @include giveBtn;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}

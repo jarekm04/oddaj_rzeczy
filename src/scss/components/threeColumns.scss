@@ -5,7 +5,7 @@
   justify-content: space-around;
   align-items: center;
   .stats {
-    width: 370px;
+    width: 390px;
     height: 252px;
     display: flex;
     flex-direction: column;
@@ -22,6 +22,7 @@
     }
     .stats__desc {
       font-size: 1rem;
+      font-family: $font-alt;
       text-align: center;
       line-height: 1.4rem;
     }
