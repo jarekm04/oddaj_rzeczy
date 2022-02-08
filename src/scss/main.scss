@@ -1,7 +1,10 @@
 @import "settings/reset";
 @import "./settings/fonts";
 @import "./settings/colors";
+@import "./settings/mixins";
+@import "components/home";
 
 body {
   font-family: $font-base;
+  color: $color-darkGray
 }
