@@ -1,0 +1,29 @@
+.threeColumns {
+  height: 384px;
+  background: transparent url('../../assets/3-Columns-Background.png');
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .stats {
+    width: 370px;
+    height: 252px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .stats__num {
+      font-size: 5.625rem;
+      font-weight: normal;
+      color: $color-brown;
+    }
+    .stats__title {
+      font-size: 1.125rem;
+      margin: 30px 0;
+    }
+    .stats__desc {
+      font-size: 1rem;
+      text-align: center;
+      line-height: 1.4rem;
+    }
+  }
+}

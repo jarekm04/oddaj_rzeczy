@@ -3,6 +3,7 @@
 @import "./settings/colors";
 @import "./settings/mixins";
 @import "components/home";
+@import "components/threeColumns";
 
 body {
   font-family: $font-base;
