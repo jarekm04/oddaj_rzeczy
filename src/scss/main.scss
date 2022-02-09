@@ -3,10 +3,12 @@
 @import "./settings/colors";
 @import "./settings/mixins";
 @import "components/home";
+@import "components/header";
 @import "components/threeColumns";
 @import "components/simpleSteps";
 @import "components/aboutUs";
 @import "components/foundation";
+@import "components/contact";
 
 body {
   font-family: $font-base;
