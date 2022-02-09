@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "choiceText": "W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.",
+    "leftTitle1": "Fundacja “Dbam o Zdrowie”",
+    "leftDesc1": "Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
+    "rightDesc1": "ubrania, jedzenie, sprzęt AGD, meble, zabawki",
+    "leftTitle2": "Fundacja “Dla dzieci”",
+    "leftDesc2": "Cel i misja: Pomoc dzieciom z ubogich rodzin.",
+    "rightDesc2": "ubrania, meble, zabawki",
+    "leftTitle3": "Fundacja “Bez domu”",
+    "leftDesc3": "Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.",
+    "rightDesc3": "ubrania, jedzenie, ciepłe koce"
+  },
+  {
+    "id": "2",
+    "choiceText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+    "leftTitle1": "Organizacja “Lorem Ipsum 1”",
+    "leftDesc1": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
+    "rightDesc1": "Egestas, sed, tempus",
+    "leftTitle2": "Organizacja “Lorem Ipsum 2”",
+    "leftDesc2": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
+    "rightDesc2": "Ut, aliquam, purus, sit, amet",
+    "leftTitle3": "Organizacja “Lorem Ipsum 3”",
+    "leftDesc3": "Scelerisque in dictum non consectetur a erat nam.",
+    "rightDesc3": "Mi, quis, hendrerit, dolor"
+  },
+  {
+    "id": "3",
+    "choiceText": "Losem ddsum doaaaor admet, cotetur adidapiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+    "leftTitle1": "Zbiórka “Lorem Ipsum 1”",
+    "leftDesc1": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
+    "rightDesc1": "Egestas, sed, tempus",
+    "leftTitle2": "Zbiórka “Lorem Ipsum 2”",
+    "leftDesc2": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
+    "rightDesc2": "Ut, aliquam, purus, sit, amet",
+    "leftTitle3": "Zbiórka “Lorem Ipsum 3”",
+    "leftDesc3": "Scelerisque in dictum non consectetur a erat nam.",
+    "rightDesc3": "Mi, quis, hendrerit, dolor"
+  }
+]
