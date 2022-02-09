@@ -4,7 +4,7 @@ import ReactPaginate from "react-paginate";
 import decoration from "../../assets/Decoration.svg";
 
 const Foundation = () => {
-    const data = PaginationData;
+    const [data, setData] = useState(PaginationData.foundations);
     const [pageNumber, setPageNumber] = useState(0);
 
     const dataPerPage = 1;
@@ -45,6 +45,7 @@ const Foundation = () => {
         );
     });
 
+
     const changePage = ({selected}) => {
         setPageNumber(selected);
     }
@@ -54,16 +55,15 @@ const Foundation = () => {
             <p className="foundation__title">Komu pomagamy?</p>
             <img src={decoration} alt="decoration" className="decoration"/>
             <div className="foundation__choice">
-                <div className="choice">Fundacjom</div>
-                <div className="choice">Organizacjom pozarządowym</div>
-                <div className="choice">Lokalnym zbiórkom</div>
+                <div className="choice" onClick={() => {setData(PaginationData.foundations); setPageNumber(0) }}>Fundacjom</div>
+                <div className="choice" onClick={() => {setData(PaginationData.organisations); setPageNumber(0)}}>Organizacjom pozarządowym</div>
+                <div className="choice" onClick={() => {setData(PaginationData.collections); setPageNumber(0)}}>Lokalnym zbiórkom</div>
             </div>
-            {displayData}
+            { displayData }
             <ReactPaginate
                 pageCount={data.length}
                 onPageChange={changePage}
                 containerClassName={"foundation__numbers"}
-                activeClassName={"numberActive"}
             />
         </section>
     );

@@ -5,7 +5,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 const schema = yup.object().shape({
-    firstName: yup.string().required("Proszę wpisać imię").min(4, "Imię musi zawierać min. 4 znaki"),
+    firstName: yup.string().required("Proszę wpisać imię").min(2, "Imię musi zawierać min. 2 znaki"),
     email: yup.string().email("Proszę wpisać poprawny email").required("Proszę wpisać email"),
     msg: yup.string().required("Proszę wpisać wiadomość").min(120, "Wiadomość musi zawierać min. 120 znaków")
 });
@@ -27,7 +27,7 @@ const ContactForm = () => {
             <div className="smallInputs">
                 <div className="oneInput">
                     <label className="label">Wpisz swoje imię</label>
-                    <input type="text" placeholder="Krzysztof" {...register("firstName", {required: true, min: 3, maxLength: 80})}/>
+                    <input type="text" placeholder="Krzysztof" {...register("firstName", {required: true, min: 2, maxLength: 80})}/>
                     <p className="errorsMsg">{errors.firstName?.message}</p>
                 </div>
                 <div className="oneInput">
