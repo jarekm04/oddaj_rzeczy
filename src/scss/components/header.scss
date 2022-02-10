@@ -6,7 +6,16 @@
   .header__loginArea {
     display: flex;
     justify-content: flex-end;
-    .loginArea__btn {
+    .userName {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.875rem;
+      margin-right: 20px;
+      margin-bottom: 10px;
+    }
+    .loginArea__btn,
+    .give__btn {
       font-size: 0.875rem;
       padding: 9px 10px;
       color: $color-headerBtns;
@@ -16,8 +25,12 @@
       cursor: pointer;
       margin-bottom: 10px;
       &:hover {
-        border: 1px solid $color-yellow;
+        background-color: $color-white;
       }
+    }
+    .give__btn {
+      color: $color-darkGray;
+      border: 1px solid $color-yellow;
     }
   }
   .header__menu {

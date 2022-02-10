@@ -8,8 +8,8 @@ const Header = ({isUserLogged, setIsUserLogged}) => {
         <header className="header">
             {isUserLogged ? (
                 <section className="header__loginArea">
-                    <p className="userName">{localStorage.getItem("userName")}</p>
-                    <Link to="/oddaj-rzeczy" className="loginArea__btn">Oddaj rzeczy</Link>
+                    <p className="userName">Cześć {localStorage.getItem("userName")}</p>
+                    <Link to="/oddaj-rzeczy" className="give__btn">Oddaj rzeczy</Link>
                     <Link onClick={() => setIsUserLogged(false)} to="/wylogowano" className="loginArea__btn" >Wyloguj</Link>
                 </section>
             ) : (

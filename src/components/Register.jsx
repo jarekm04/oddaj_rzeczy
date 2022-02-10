@@ -30,8 +30,8 @@ const Register = ({setIsUserLogged, registerEmail, registerPassword, registerCon
         registerEmail = formData.email;
         registerPassword = formData.password;
         registerConfirmPassword = formData.confirmPassword;
-
         localStorage.setItem("userName", registerEmail);
+
         setIsFormSending(true);
         setIsUserLogged(true);
 

@@ -79,6 +79,9 @@
       background-color: white;
       border: 1px solid $color-darkGray;
       cursor: pointer;
+      &:hover {
+        background-color: $color-white;
+      }
     }
     .errorsMsg {
       font-size: 0.8rem;
