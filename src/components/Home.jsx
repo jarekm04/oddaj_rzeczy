@@ -9,7 +9,7 @@ import AboutUs from "./HomeComponents/AboutUs";
 import Foundation from "./HomeComponents/Foundation";
 import Contact from "./HomeComponents/Contact";
 
-const Home = () => {
+const Home = ({isUserLogged, setIsUserLogged}) => {
     return (
         <>
             <div className="welcome">
@@ -17,7 +17,7 @@ const Home = () => {
                     <img className="welcome__bg" src={welcomeBg} alt="stuff"/>
                 </div>
                 <section className="welcome__content">
-                    <Header />
+                    <Header isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged}/>
                     <main className="main__content">
                         <h1 className="main__title">Zacznij pomagać!<br/>Oddaj niechciane rzeczy w zaufane ręce</h1>
                         <img src={decoration} alt="decoration" className="decoration"/>

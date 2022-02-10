@@ -11,6 +11,12 @@
     @include decorationLine;
     margin-bottom: 60px;
   }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .register__data {
     display: flex;
     flex-direction: column;
@@ -38,6 +44,12 @@
       border: none;
       border-bottom: 1px solid $color-darkGray;
       line-height: 1.5rem;
+    }
+    .errorMsg {
+      font-size: 0.8rem;
+      margin-top: -25px;
+      margin-bottom: 15px;
+      color: red;
     }
   }
   .register__buttons {
