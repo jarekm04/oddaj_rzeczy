@@ -1,29 +1,47 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import decoration from "../../assets/Decoration.svg";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import axios from "axios";
 
 const schema = yup.object().shape({
-    firstName: yup.string().required("Proszę wpisać imię").min(2, "Imię musi zawierać min. 2 znaki").matches(/^(\S+$)/, 'Pole powinno być jednym wyrazem'),
+    firstName: yup.string().required("Proszę wpisać imię").min(2, "Imię musi zawierać min. 2 znaki").matches(/^(\S+$)/, 'Pole powinno zawierać jedno słowo'),
     email: yup.string().email("Proszę wpisać poprawny email").required("Proszę wpisać email"),
     msg: yup.string().required("Proszę wpisać wiadomość").min(120, "Wiadomość musi zawierać min. 120 znaków")
 });
 
 const ContactForm = () => {
-    const {register, handleSubmit, formState: { errors }} = useForm({
+    const {register, handleSubmit, reset, formState: { errors }} = useForm({
         resolver: yupResolver(schema)
     });
+    const [isFormSent, setIsFormSent] = useState(false);
 
-    const onSubmit = (data) => {
-        console.log(data)
+    const onSubmit = (formData) => {
+        console.log(formData);
+        setIsFormSent(true);
+
+        axios.post('https://fer-api.coderslab.pl/v1/portfolio/contact', formData)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
+        setTimeout(() => {
+            setIsFormSent(false);
+            reset();
+        }, 5000);
     }
     console.log(errors);
+
 
     return (
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
             <p className="form__title">Skontaktuj się z nami</p>
             <img src={decoration} alt="decoration" className="decoration"/>
+            {isFormSent && <p className="form__successMsg">Wiadomość została wysłąna!<br/>Wkrótce się skontaktujemy</p>}
             <div className="smallInputs">
                 <div className="oneInput">
                     <label className="label">Wpisz swoje imię</label>

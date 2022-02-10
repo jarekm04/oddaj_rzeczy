@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import PaginationData from "../../assets/PAGINATION_DATA.json";
+import PaginationData from "../../data/PAGINATION_DATA.json";
 import ReactPaginate from "react-paginate";
 import decoration from "../../assets/Decoration.svg";
 
