@@ -5,7 +5,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 const schema = yup.object().shape({
-    firstName: yup.string().required("Proszę wpisać imię").min(2, "Imię musi zawierać min. 2 znaki"),
+    firstName: yup.string().required("Proszę wpisać imię").min(2, "Imię musi zawierać min. 2 znaki").matches(/^(\S+$)/, 'Pole powinno być jednym wyrazem'),
     email: yup.string().email("Proszę wpisać poprawny email").required("Proszę wpisać email"),
     msg: yup.string().required("Proszę wpisać wiadomość").min(120, "Wiadomość musi zawierać min. 120 znaków")
 });
