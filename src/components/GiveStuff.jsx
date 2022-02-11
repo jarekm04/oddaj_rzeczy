@@ -15,10 +15,10 @@ const GiveStuff = () => {
                         <img src={decoration} alt="decoration" className="decoration"/>
                         <h2 className="main__subtitle">Wystarczą 4 proste kroki:</h2>
                         <div className="main__steps">
-                            <p className="step">1<br/>Wybierz rzeczy</p>
-                            <p className="step">2<br/>Spakuj je w worki</p>
-                            <p className="step">3<br/>Wybierz fundację</p>
-                            <p className="step">4<br/>Zamów kuriera</p>
+                            <p className="step"><span>1</span>Wybierz<br/>rzeczy</p>
+                            <p className="step"><span>2</span>Spakuj je<br/>w worki</p>
+                            <p className="step"><span>3</span>Wybierz<br/>fundację</p>
+                            <p className="step"><span>4</span>Zamów<br/>kuriera</p>
                         </div>
                     </main>
                 </section>
