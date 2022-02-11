@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Header from "./HomeComponents/Header";
 import decoration from "../assets/Decoration.svg";
 import {Link} from "react-router-dom";
 import * as yup from "yup";
@@ -44,31 +43,28 @@ const Register = ({setIsUserLogged, registerEmail, registerPassword, registerCon
     // console.log(errors);
 
     return (
-        <>
-            <Header/>
-            <section className="register-box">
-                <p className="register__title">Zarejestruj się</p>
-                <img src={decoration} alt="decoration" className="decoration"/>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="register__data">
-                        <label className="label">Email</label>
-                        <input type="text" {...register("email", {required: true, pattern: /^\S+@\S+$/i})}/>
-                        {errors.email?.message && <p className="errorMsg">{errors.email?.message}</p>}
-                        <label className="label">Hasło</label>
-                        <input type="password" {...register("password", {required: true, max: 15, min: 6})} />
-                        {errors.password?.message && <p className="errorMsg">{errors.password?.message}</p>}
-                        <label className="label">Powtórz hasło</label>
-                        <input type="password" {...register("confirmPassword", {required: true, max: 15, min: 6})} />
-                        {errors.confirmPassword?.message &&
-                        <p className="errorMsg">{errors.confirmPassword && "Hasła nie są takie same"}</p>}
-                    </div>
-                    <div className="register__buttons">
-                        <Link to="/logowanie" className="login__btn">Zaloguj się</Link>
-                        <button className="register__btn" type="submit">Załóż konto</button>
-                    </div>
-                </form>
-            </section>
-        </>
+        <section className="register-box">
+            <p className="register__title">Zarejestruj się</p>
+            <img src={decoration} alt="decoration" className="decoration"/>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="register__data">
+                    <label className="label">Email</label>
+                    <input type="text" {...register("email", {required: true, pattern: /^\S+@\S+$/i})}/>
+                    {errors.email?.message && <p className="errorMsg">{errors.email?.message}</p>}
+                    <label className="label">Hasło</label>
+                    <input type="password" {...register("password", {required: true, max: 15, min: 6})} />
+                    {errors.password?.message && <p className="errorMsg">{errors.password?.message}</p>}
+                    <label className="label">Powtórz hasło</label>
+                    <input type="password" {...register("confirmPassword", {required: true, max: 15, min: 6})} />
+                    {errors.confirmPassword?.message &&
+                    <p className="errorMsg">{errors.confirmPassword && "Hasła nie są takie same"}</p>}
+                </div>
+                <div className="register__buttons">
+                    <Link to="/logowanie" className="login__btn">Zaloguj się</Link>
+                    <button className="register__btn" type="submit">Załóż konto</button>
+                </div>
+            </form>
+        </section>
     );
 };
 

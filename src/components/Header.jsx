@@ -1,8 +1,19 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {Link as LinkScroll} from "react-scroll";
+import {auth} from "../firebase";
+import {signOut} from "firebase/auth";
+
 
 const Header = ({isUserLogged, setIsUserLogged}) => {
+
+    const handleSignOut = () => {
+        signOut(auth).then(() => {
+            setIsUserLogged(false);
+        }).catch(err => {
+            alert(err.message);
+        });
+    };
 
     return (
         <header className="header">
@@ -10,7 +21,7 @@ const Header = ({isUserLogged, setIsUserLogged}) => {
                 <section className="header__loginArea">
                     <p className="userName">Cześć {localStorage.getItem("userName")}</p>
                     <Link to="/oddaj-rzeczy" className="give__btn">Oddaj rzeczy</Link>
-                    <Link onClick={() => setIsUserLogged(false)} to="/wylogowano" className="loginArea__btn" >Wyloguj</Link>
+                    <Link onClick={handleSignOut} to="/wylogowano" className="loginArea__btn" >Wyloguj</Link>
                 </section>
             ) : (
                 <section className="header__loginArea">

@@ -1,11 +1,13 @@
-import React from 'react';
-import Header from "./HomeComponents/Header";
+import React, {useEffect} from 'react';
+import Header from "./Header";
+import {auth} from "../firebase";
 
-const GiveStuffForm = () => {
+const GiveStuffForm = ({isUserLogged, setIsUserLogged}) => {
+
+
 
     return (
         <>
-            <Header />
             <form className="giveStuffForm">
                 <h1>Eloszka</h1>
             </form>

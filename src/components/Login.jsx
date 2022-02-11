@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Header from "./HomeComponents/Header";
 import decoration from "../assets/Decoration.svg";
 import {Link, useNavigate} from "react-router-dom";
 import * as yup from "yup";
@@ -40,27 +39,24 @@ const Login = ({setIsUserLogged, userEmail, userPassword}) => {
     console.log(errors);
 
     return (
-        <>
-            <Header/>
-            <section className="login-box">
-                <p className="login__title">Zaloguj się</p>
-                <img src={decoration} alt="decoration" className="decoration"/>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="login__data">
-                        <label className="label">Email</label>
-                        <input type="text" {...register("email", {required: true, pattern: /^\S+@\S+$/i})}/>
-                        {errors.email?.message && <p className="errorMsg">{errors.email?.message}</p>}
-                        <label className="label">Hasło</label>
-                        <input type="password" {...register("password", {required: true, max: 15, min: 6})} />
-                        {errors.password?.message && <p className="errorMsg">{errors.password?.message}</p>}
-                    </div>
-                    <div className="login__buttons">
-                        <Link to="/rejestracja" className="register__btn">Załóż konto</Link>
-                        <button className="login__btn">Zaloguj się</button>
-                    </div>
-                </form>
-            </section>
-        </>
+        <section className="login-box">
+            <p className="login__title">Zaloguj się</p>
+            <img src={decoration} alt="decoration" className="decoration"/>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="login__data">
+                    <label className="label">Email</label>
+                    <input type="text" {...register("email", {required: true, pattern: /^\S+@\S+$/i})}/>
+                    {errors.email?.message && <p className="errorMsg">{errors.email?.message}</p>}
+                    <label className="label">Hasło</label>
+                    <input type="password" {...register("password", {required: true, max: 15, min: 6})} />
+                    {errors.password?.message && <p className="errorMsg">{errors.password?.message}</p>}
+                </div>
+                <div className="login__buttons">
+                    <Link to="/rejestracja" className="register__btn">Załóż konto</Link>
+                    <button className="login__btn">Zaloguj się</button>
+                </div>
+            </form>
+        </section>
     );
 };
 

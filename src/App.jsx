@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
 import GiveStuffForm from "./components/GiveStuffForm";
+import Header from "./components/Header";
 
 function App() {
   const [isUserLogged, setIsUserLogged] = useState(false);
@@ -20,12 +21,13 @@ function App() {
   return (
     <>
       <Router>
+        <Header isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged} />
         <Routes>
           <Route path="/" element={<Home isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged}/>} />
           <Route path="/logowanie" element={<Login setIsUserLogged={setIsUserLogged} userEmail={values.userEmail} userPassword={values.userPassword} />} />
           <Route path="/rejestracja" element={<Register setIsUserLogged={setIsUserLogged} registerEmail={values.registerEmail} registerPassword={values.registerPassword} registerConfirmPassword={values.registerConfirmPassword} />} />
           <Route path="/wylogowano" element={<Logout />} />
-          <Route path="/oddaj-rzeczy" element={<GiveStuffForm />} />
+          <Route path="/oddaj-rzeczy" element={<GiveStuffForm isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged} />} />
         </Routes>
       </Router>
     </>

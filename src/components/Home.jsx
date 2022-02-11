@@ -2,14 +2,13 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import welcomeBg from "../assets/Home-Hero-Image.jpg";
 import decoration from "../assets/Decoration.svg";
-import Header from "./HomeComponents/Header";
 import ThreeColumns from "./HomeComponents/ThreeColumns";
 import SimpleSteps from "./HomeComponents/SimpleSteps";
 import AboutUs from "./HomeComponents/AboutUs";
 import Foundation from "./HomeComponents/Foundation";
 import Contact from "./HomeComponents/Contact";
 
-const Home = ({isUserLogged, setIsUserLogged}) => {
+const Home = () => {
     return (
         <>
             <div className="welcome">
@@ -17,7 +16,6 @@ const Home = ({isUserLogged, setIsUserLogged}) => {
                     <img className="welcome__bg" src={welcomeBg} alt="stuff"/>
                 </div>
                 <section className="welcome__content">
-                    <Header isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged}/>
                     <main className="main__content">
                         <h1 className="main__title">Zacznij pomagać!<br/>Oddaj niechciane rzeczy w zaufane ręce</h1>
                         <img src={decoration} alt="decoration" className="decoration"/>
