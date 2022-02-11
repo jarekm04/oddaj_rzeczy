@@ -1,0 +1,44 @@
+.giveStuff {
+  height: calc(100vh - 107px);
+  display: flex;
+  .bg-box {
+    width: 45%;
+    height: calc(100% + 107px);
+    margin-top: -107px;
+    z-index: -2;
+    .giveStuff__bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .giveStuff__content {
+    width: 55%;
+    .main__content {
+      display: flex;
+      flex-direction: column;
+      margin-top: 150px;
+      margin-right: 100px;
+      .main__title {
+        font-size: 2.375rem;
+        font-weight: normal;
+        text-align: center;
+        line-height: 2.7rem;
+        margin-bottom: 25px;
+      }
+      .decoration {
+        @include decorationLine;
+        align-self: center;
+        margin-bottom: 65px;
+      }
+      .main__subtitle {
+
+      }
+      .main__steps {
+        .step {
+
+        }
+      }
+    }
+  }
+}
