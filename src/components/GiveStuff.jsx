@@ -1,11 +1,13 @@
 import React from 'react';
 import giveStuffBg from "../assets/Form-Hero-Image.jpg";
 import decoration from "../assets/Decoration.svg";
+import SendStuffForm from "./SendStuffForm";
+// import Contact from "./HomeComponents/Contact";
 
 const GiveStuff = () => {
-
     return (
-        <section className="giveStuff">
+        <>
+            <section className="giveStuff">
                 <div className="bg-box">
                     <img className="giveStuff__bg" src={giveStuffBg} alt="blouse"/>
                 </div>
@@ -22,7 +24,10 @@ const GiveStuff = () => {
                         </div>
                     </main>
                 </section>
-        </section>
+            </section>
+            <SendStuffForm/>
+            {/*<Contact />*/}
+        </>
     );
 };
 
