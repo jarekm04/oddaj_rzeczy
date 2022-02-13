@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./components/Home";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Logout from "./components/Logout";
-import GiveStuff from "./components/GiveStuff";
+import Login from "./components/LoginComponents/Login";
+import Register from "./components/LoginComponents/Register";
+import Logout from "./components/LoginComponents/Logout";
+import GiveStuff from "./components/SendFormComponents/GiveStuff";
 import Header from "./components/Header";
 
 function App() {

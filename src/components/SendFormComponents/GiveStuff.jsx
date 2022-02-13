@@ -1,6 +1,6 @@
 import React from 'react';
-import giveStuffBg from "../assets/Form-Hero-Image.jpg";
-import decoration from "../assets/Decoration.svg";
+import giveStuffBg from "../../assets/Form-Hero-Image.jpg";
+import decoration from "../../assets/Decoration.svg";
 import SendStuffForm from "./SendStuffForm";
 // import Contact from "./HomeComponents/Contact";
 

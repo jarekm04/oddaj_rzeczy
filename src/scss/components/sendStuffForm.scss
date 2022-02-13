@@ -1,0 +1,25 @@
+.sendStuffForm {
+  .sendStuffForm__warn {
+    padding-left: 100px;
+    width: 100%;
+    height: 180px;
+    background-color: #FAD648;
+    .warn__title {
+      font-size: 2.375rem;
+      font-weight: bold;
+    }
+    .warn__subtitle {
+      font-size: 1.375rem;
+    }
+  }
+  .sendStuffForm__form {
+    .form__step {
+      font-size: 1.5rem;
+      font-weight: lighter;
+    }
+    .form__title {
+      font-size: 2.25rem;
+      font-weight: bold;
+    }
+  }
+}

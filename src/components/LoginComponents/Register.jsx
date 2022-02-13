@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import decoration from "../assets/Decoration.svg";
+import decoration from "../../assets/Decoration.svg";
 import {Link} from "react-router-dom";
 import * as yup from "yup";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {createUserWithEmailAndPassword} from "firebase/auth";
-import {auth} from "../firebase";
+import {auth} from "../../firebase";
 import {useNavigate} from "react-router-dom";
 
 
