@@ -1,5 +1,9 @@
 .sendStuffForm {
   .sendStuffForm__warn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
     padding-left: 100px;
     width: 100%;
     height: 180px;
@@ -7,6 +11,7 @@
     .warn__title {
       font-size: 2.375rem;
       font-weight: bold;
+      color: black;
     }
     .warn__subtitle {
       font-size: 1.375rem;

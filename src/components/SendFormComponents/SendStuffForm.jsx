@@ -4,7 +4,7 @@ const SendStuffForm = () => {
     return (
         <form className="sendStuffForm">
             <div className="sendStuffForm__warn">
-                <p className="warn__title">Ważne</p>
+                <p className="warn__title">Ważne!</p>
                 <p className="warn__subtitle">Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.</p>
             </div>
             <div className="sendStuffForm__form">
