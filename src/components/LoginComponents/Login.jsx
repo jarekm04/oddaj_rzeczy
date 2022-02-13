@@ -13,7 +13,6 @@ const schemaLogin = yup.object().shape({
 });
 
 const Login = ({setIsUserLogged, userEmail, userPassword}) => {
-
     const {register, handleSubmit, formState: {errors}} = useForm({
         resolver: yupResolver(schemaLogin)
     });
@@ -22,7 +21,6 @@ const Login = ({setIsUserLogged, userEmail, userPassword}) => {
     const navigate = useNavigate();
 
     const onSubmit = (formData) => {
-        // console.log(formData);
         userEmail = formData.email;
         userPassword = formData.password;
         localStorage.setItem("userName", userEmail);
@@ -36,7 +34,6 @@ const Login = ({setIsUserLogged, userEmail, userPassword}) => {
             }).catch((err) =>
             alert(err.message));
     }
-    console.log(errors);
 
     return (
         <section className="login-box">

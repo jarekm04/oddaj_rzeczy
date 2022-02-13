@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
-import decoration from "../../assets/Decoration.svg";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
+import decoration from "../../assets/Decoration.svg";
 
 const schema = yup.object().shape({
-    firstName: yup.string().required("Proszę wpisać imię").min(2, "Imię musi zawierać min. 2 znaki").matches(/^(\S+$)/, 'Pole powinno zawierać jedno słowo'),
+    name: yup.string().required("Proszę wpisać imię").min(2, "Imię musi zawierać min. 2 znaki").matches(/^(\S+$)/, 'Pole powinno zawierać jedno słowo'),
     email: yup.string().email("Proszę wpisać poprawny email").required("Proszę wpisać email"),
-    msg: yup.string().required("Proszę wpisać wiadomość").min(120, "Wiadomość musi zawierać min. 120 znaków")
+    message: yup.string().required("Proszę wpisać wiadomość").min(120, "Wiadomość musi zawierać min. 120 znaków")
 });
 
 const ContactForm = () => {
@@ -23,10 +23,10 @@ const ContactForm = () => {
 
         axios.post('https://fer-api.coderslab.pl/v1/portfolio/contact', formData)
             .then(response => {
-                console.log(response)
+                console.log(response);
             })
             .catch(error => {
-                console.log(error)
+                console.log(error);
             })
 
         setTimeout(() => {
@@ -36,7 +36,6 @@ const ContactForm = () => {
     }
     console.log(errors);
 
-
     return (
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
             <p className="form__title">Skontaktuj się z nami</p>
@@ -45,7 +44,7 @@ const ContactForm = () => {
             <div className="smallInputs">
                 <div className="oneInput">
                     <label className="label">Wpisz swoje imię</label>
-                    <input type="text" placeholder="Krzysztof" {...register("firstName", {required: true, min: 2, maxLength: 80})}/>
+                    <input type="text" placeholder="Krzysztof" {...register("name", {required: true, min: 2, maxLength: 80})}/>
                     <p className="errorsMsg">{errors.firstName?.message}</p>
                 </div>
                 <div className="oneInput">
@@ -55,7 +54,7 @@ const ContactForm = () => {
                 </div>
             </div>
             <label className="label">Wpisz swoją wiadomość</label>
-            <textarea {...register("msg", {required: true, min: 120})} placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+            <textarea {...register("message", {required: true, min: 120})} placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
             <p className="errorsMsg">{errors.msg?.message}</p>
             <button type="submit" className="contact__btn">Wyślij</button>
         </form>

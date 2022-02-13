@@ -1,8 +1,8 @@
 import React from 'react';
+import ContactForm from "./ContactForm";
 import ContactBg from "../../assets/Background-Contact-Form.jpg";
 import fb from "../../assets/Facebook.svg";
 import insta from "../../assets/Instagram.svg";
-import ContactForm from "./ContactForm";
 
 const Contact = () => {
     return (

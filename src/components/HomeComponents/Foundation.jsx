@@ -45,7 +45,6 @@ const Foundation = () => {
         );
     });
 
-
     const changePage = ({selected}) => {
         setPageNumber(selected);
     }
@@ -55,7 +54,12 @@ const Foundation = () => {
             <p className="foundation__title">Komu pomagamy?</p>
             <img src={decoration} alt="decoration" className="decoration"/>
             <div className="foundation__choice">
-                <div className="choice" onClick={() => {setData(PaginationData.foundations); setPageNumber(0) }}>Fundacjom</div>
+                <div
+                    className="choice"
+                    onClick={() => {setData(PaginationData.foundations); setPageNumber(0) }}
+                >
+                    Fundacjom
+                </div>
                 <div className="choice" onClick={() => {setData(PaginationData.organisations); setPageNumber(0)}}>Organizacjom pozarządowym</div>
                 <div className="choice" onClick={() => {setData(PaginationData.collections); setPageNumber(0)}}>Lokalnym zbiórkom</div>
             </div>
