@@ -1,47 +1,63 @@
-import React from 'react';
-import {useForm, useStep} from "react-hooks-helper";
-import BearBg from '../../assets/Background-Form-mini.jpg';
-
-const defaultData = {
-    firstName: "",
-    lastName: "",
-    nickName: ""
-};
+import React, {useState} from 'react';
+import {useStep} from "react-hooks-helper";
+import Checkboxes from "./StepForm/Checkboxes";
+import Select from "./StepForm/Select";
+import Location from "./StepForm/Location";
+import Address from "./StepForm/Address";
+import Review from "./StepForm/Review";
+import Submit from "./StepForm/Submit";
 
 const steps = [
-    {id: 'names'},
+    {id: 'checkboxes'},
+    {id: 'select'},
+    {id: 'location'},
     {id: 'address'},
-    {id: 'contact'},
     {id: 'review'},
     {id: 'submit'}
 ];
 
 const SendStuffForm = () => {
-    const [formData, setForm] = useForm(defaultData);
+    const [formData, setFormData] = useState({
+        userGift: "",
+        firstName: "",
+        lastName: "",
+        nickName: ""
+    });
+
     const { step, navigation } = useStep({
         steps,
         initialStep: 0,
     });
 
-    console.log(step);
+    const props = { formData, setFormData, navigation };
+
+    const renderSwitch = () => {
+        switch (step.id) {
+            case 'checkboxes':
+                return <Checkboxes {...props} />;
+            case 'select':
+                return <Select />;
+            case 'location':
+                return <Location />;
+            case 'address':
+                return <Address />;
+            case 'review':
+                return <Review />;
+            case 'submit':
+                return <Submit />;
+            default:
+                return null;
+        }
+    }
 
     return (
         <form className="sendStuffForm">
-            <div className="sendStuffForm__warn">
-                <p className="warn__title">Ważne!</p>
-                <p className="warn__subtitle">Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć
-                    komu najlepiej je przekazać.</p>
-            </div>
-            <div className="sendStuffForm__form">
-                <p className="form__step">Krok 1/4</p>
-                <h2 className="form__title">Zaznacz co chcesz oddać:</h2>
-                <div className="form__inputs">
-                    <input type="text"/>
-                </div>
-            </div>
-            <img src={BearBg} alt="bear" className="sendStuffForm__bearBg"/>
+            {renderSwitch(step.id)}
         </form>
-    );
+    )
+
+
+
 };
 
 export default SendStuffForm;
