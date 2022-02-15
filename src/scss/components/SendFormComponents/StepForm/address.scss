@@ -1,0 +1,34 @@
+.form__address {
+  display: flex;
+  .dataTitle {
+    @include formH2Subtitle;
+  }
+  .data__box {
+    display: flex;
+    width: 330px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    label {
+      width: 99px;
+      font-size: 1.5rem;
+      font-weight: lighter;
+      margin-right: 20px;
+    }
+    input[type="text"] {
+      height: 30px;
+      font-size: 1rem;
+      background-color: transparent;
+      border: 1px solid $color-darkGray;
+    }
+    #note {
+      height: 100px;
+      min-width: 195px;
+      font-size: 1rem;
+      background: transparent;
+      resize: none;
+    }
+  }
+  .pickupData {
+    margin-right: 30px;
+  }
+}

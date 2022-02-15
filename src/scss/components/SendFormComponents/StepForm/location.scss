@@ -54,9 +54,7 @@
   }
   .helpgroups {
     .helpgroups__title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-top: 30px;
+      @include formH2Subtitle;
     }
     .helpgroups__squares {
       display: flex;
@@ -90,9 +88,7 @@
   }
   .organisation {
     .organisation__title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 20px;
+      @include formH2Subtitle;
     }
     input[type="text"] {
       font-size: 1.5rem;

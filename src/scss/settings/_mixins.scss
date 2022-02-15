@@ -19,3 +19,9 @@
     background-color: $color-white;
   }
 }
+
+@mixin formH2Subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
