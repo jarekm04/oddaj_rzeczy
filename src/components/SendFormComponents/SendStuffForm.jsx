@@ -50,10 +50,10 @@ const SendStuffForm = () => {
             {/*{renderSwitch(step.id)}*/}
             {/*<Checkboxes />*/}
             <Select />
-            <Location />
-            <Address />
-            <Review />
-            <Submit />
+            {/*<Location />*/}
+            {/*<Address />*/}
+            {/*<Review />*/}
+            {/*<Submit />*/}
             <img src={BearBg} alt="bear" className="sendStuffForm__bearBg"/>
         </form>
     )

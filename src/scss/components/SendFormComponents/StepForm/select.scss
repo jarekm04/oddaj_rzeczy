@@ -1,10 +1,23 @@
 .form__select {
-  label {
+  height: 329px;
+  display: flex;
+  flex-direction: column;
+  .select-box {
+    display: flex;
+    align-items: center;
     font-size: 1.5rem;
     font-weight: lighter;
-    .select-wrap {
+
+    .box {
+      display: flex;
+      align-items: center;
       position: relative;
-      display: inline-block;
+      width: 300px;
+      height: 49px;
+      border: 1px solid $color-darkGray;
+      margin-left: 30px;
+      padding-left: 15px;
+      cursor: pointer;
       &:after {
         content: url("../../../../assets/Icon-Arrow-Down.svg");
         position: absolute;
@@ -14,21 +27,33 @@
         color: $color-darkGray;
         pointer-events: none;
       }
-      select {
-        width: 300px;
-        height: 49px;
-        font-size: 1.5rem;
-        font-weight: lighter;
-        color: $color-darkGray;
-        padding-left: 10px;
-        margin-left: 30px;
-        background-color: transparent;
-        appearance: none;
-        cursor: pointer;
-        option {
-          background-color: #eeedeb;
-        }
+    }
+    .box.rotateArrow {
+      &:after {
+        transform: rotate(180deg) translateY(50%);
       }
     }
+  }
+  .select-active {
+    width: 65px;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: $color-darkGray;
+    margin-left: 467px;
+    margin-top: 15px;
+    background-color: transparent;
+    appearance: none;
+    cursor: pointer;
+    overflow: auto;
+    option {
+      text-align: center;
+      background-color: #eeedeb;
+      &:hover {
+        background-color: #989595;
+      }
+    }
+  }
+  .select-none {
+    display: none;
   }
 }

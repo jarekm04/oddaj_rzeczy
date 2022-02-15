@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  height: 802px;
   background-color: #eeedeb;
   .sendStuffForm__warn {
     display: flex;
@@ -31,6 +32,7 @@
   }
   .sendStuffForm__form {
     width: 60%;
+    height: 665px;
     padding-left: 100px;
     .form__step {
       font-size: 1.5rem;
