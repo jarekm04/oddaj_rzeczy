@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import BearBg from "../../../assets/Background-Form-mini.jpg";
+import React from 'react';
 
 const Checkboxes = ({formData, setFormData, navigation}) => {
     // const handleCheckbox = (e) => {
@@ -11,10 +10,6 @@ const Checkboxes = ({formData, setFormData, navigation}) => {
     //     }));
     // }
 
-    const handleChange = (e) => {
-        setFormData({... prevState, userGift: e.target.value})
-    }
-
     return (
         <>
             <div className="sendStuffForm__warn">
@@ -25,29 +20,27 @@ const Checkboxes = ({formData, setFormData, navigation}) => {
             <div className="sendStuffForm__form">
                 <p className="form__step">Krok 1/4</p>
                 <h2 className="form__title">Zaznacz co chcesz oddać:</h2>
-                <div className="form__inputs">
+                <div className="form__checkboxes">
                     <div className="input__item">
-                        <input onChange={handleChange} type="radio" value="firstChoice" checked={formData.userGift === "firstChoice"}/>ubrania,
-                        które nadają się do ponownego użycia
+                        <input type="radio" />ubrania, które nadają się do ponownego użycia
                     </div>
                     <div className="input__item">
-                        <input onChange={handleChange} type="radio" value="secondChoice" checked={formData.userGift === "secondChoice"}/>ubrania,
-                        do wyrzucenia
+                        <input type="radio" />ubrania, do wyrzucenia
                     </div>
-                    {/*<div className="input__item">*/}
-                    {/*    <input onChange={handleCheckbox} type="checkbox" name="thirdCheckbox" checked={formData.thirdCheckbox}/>zabawki*/}
-                    {/*</div>*/}
-                    {/*<div className="input__item">*/}
-                    {/*    <input onChange={handleCheckbox} type="checkbox" name="fourthCheckbox" checked={formData.fourthCheckbox}/>książki*/}
-                    {/*</div>*/}
-                    {/*<div className="input__item">*/}
-                    {/*    <input onChange={handleCheckbox} type="checkbox" name="fifthCheckbox" checked={formData.fifthCheckbox}/>inne*/}
-                    {/*</div>*/}
+                    <div className="input__item">
+                        <input type="radio" />zabawki
+                    </div>
+                    <div className="input__item">
+                        <input type="radio" />książki
+                    </div>
+                    <div className="input__item">
+                        <input type="radio" />inne
+                    </div>
                 </div>
-                <button className="sendStuffForm__btn">Wstecz</button>
-                <button className="sendStuffForm__btn">Dalej</button>
+                <div className="sendStuffForm__buttons">
+                    <button className="sendStuffForm__btn">Dalej</button>
+                </div>
             </div>
-            <img src={BearBg} alt="bear" className="sendStuffForm__bearBg"/>
         </>
     );
 };
