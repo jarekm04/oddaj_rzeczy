@@ -18,13 +18,18 @@ import BearBg from "../../assets/Background-Form-mini.jpg";
 // ];
 
 const SendStuffForm = () => {
+    const [showSelect, setShowSelect] = useState(false);
+
+    const handleShowSelect = () => {
+        !showSelect ? setShowSelect(true) : setShowSelect(false);
+    }
 
     // const { step, navigation } = useStep({
     //     steps,
     //     initialStep: 0,
     // });
 
-    // const props = { formData, setFormData, navigation };
+    const props = { showSelect, setShowSelect, handleShowSelect };
 
     // const renderSwitch = () => {
     //     switch (step.id) {
@@ -49,8 +54,8 @@ const SendStuffForm = () => {
         <form className="sendStuffForm">
             {/*{renderSwitch(step.id)}*/}
             {/*<Checkboxes />*/}
-            <Select />
-            {/*<Location />*/}
+            {/*<Select />*/}
+            <Location {...props} />
             {/*<Address />*/}
             {/*<Review />*/}
             {/*<Submit />*/}

@@ -1,11 +1,6 @@
 import React, {useState} from 'react';
 
-const Select = () => {
-    const [showSelect, setShowSelect] = useState(false);
-
-    const handleShowSelect = () => {
-        !showSelect ? setShowSelect(true) : setShowSelect(false);
-    }
+const Select = ({showSelect, handleShowSelect}) => {
 
     return (
         <>
