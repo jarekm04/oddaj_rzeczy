@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {Link as LinkScroll} from "react-scroll";
-import {auth} from "../firebase";
+import {auth} from "../../firebase";
 import {signOut} from "firebase/auth";
 
 const Header = ({isUserLogged, setIsUserLogged}) => {

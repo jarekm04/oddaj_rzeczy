@@ -5,7 +5,7 @@ import Login from "./components/LoginComponents/Login";
 import Register from "./components/LoginComponents/Register";
 import Logout from "./components/LoginComponents/Logout";
 import GiveStuff from "./components/SendFormComponents/GiveStuff";
-import Header from "./components/Header";
+import Header from "./components/HomeComponents/Header";
 
 function App() {
   const [isUserLogged, setIsUserLogged] = useState(false);
