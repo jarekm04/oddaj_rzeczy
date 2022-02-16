@@ -51,14 +51,14 @@ const SendStuffForm = () => {
     // }
 
     return (
-        <form className="sendStuffForm">
+        <form className="sendStuffForm submit">
             {/*{renderSwitch(step.id)}*/}
             {/*<Checkboxes />*/}
             {/*<Select />*/}
             {/*<Location {...props} />*/}
             {/*<Address />*/}
-            <Review />
-            {/*<Submit />*/}
+            {/*<Review />*/}
+            <Submit />
             <img src={BearBg} alt="bear" className="sendStuffForm__bearBg"/>
         </form>
     )
