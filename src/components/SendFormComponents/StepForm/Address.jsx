@@ -1,6 +1,9 @@
 import React from 'react';
 
-const Address = ({register}) => {
+const Address = ({register, moveForward, handleMoveForward, handleMoveBackward}) => {
+    const userMustHaveDatas = ["street", "city", "postCode", "phone", "date", "time"];
+
+
     return (
         <>
             <div className="sendStuffForm__warn">
@@ -15,30 +18,30 @@ const Address = ({register}) => {
                         <p className="dataTitle">Adres odbioru:</p>
                         <div className="data__box">
                             <label htmlFor="street">Ulica</label>
-                            <input type="text" id="street" {...register("street", {required: true, min: 2})}/>
+                            <input type="text" id="street" {...register("street", {required: true, min: 2})} className={!moveForward ? "error" : null}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="city">Miasto</label>
-                            <input type="text" id="city" {...register("city", {required: true, min: 2})}/>
+                            <input type="text" id="city" {...register("city", {required: true, min: 2})} className={!moveForward ? "error" : null}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="postCode">Kod pocztowy</label>
-                            <input type="text" id="postCode" {...register("postCode", {required: true, pattern: "{2}-{3}"})}/>
+                            <input type="text" id="postCode" {...register("postCode", {required: true, pattern: "{2}-{3}"})} className={!moveForward ? "error" : null}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="phone">Telefon</label>
-                            <input type="number" id="phone" {...register("phone", {required: true, minLength: 9, maxLength: 9})}/>
+                            <input type="number" id="phone" {...register("phone", {required: true, minLength: 9, maxLength: 9})} className={!moveForward ? "error" : null}/>
                         </div>
                     </div>
                     <div className="timeData">
                         <p className="dataTitle">Termin odbioru:</p>
                         <div className="data__box">
                             <label htmlFor="date">Data</label>
-                            <input type="date" id="date" {...register("date", {required: true})}/>
+                            <input type="date" id="date" {...register("date", {required: true})} className={!moveForward ? "error" : null}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="time">Godzina</label>
-                            <input type="time" id="time" {...register("time", {required: true})}/>
+                            <input type="time" id="time" {...register("time", {required: true})} className={!moveForward ? "error" : null}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="note">Uwagi dla kuriera</label>
@@ -46,9 +49,16 @@ const Address = ({register}) => {
                         </div>
                     </div>
                 </div>
+                {!moveForward ? <p className="errorsMsg">Proszę uzupełnić wszystkie obowiązkowe dane</p> : null}
                 <div className="sendStuffForm__buttons">
-                    <div className="sendStuffForm__btn">Wstecz</div>
-                    <div className="sendStuffForm__btn">Dalej</div>
+                    <div className="sendStuffForm__btn" onClick={handleMoveBackward}>Wstecz</div>
+                    <div className="sendStuffForm__btn"
+                         onClick={() => {
+                             handleMoveForward("street")
+                             handleMoveForward("city")
+                         }
+                         }
+                    >Dalej</div>
                 </div>
             </div>
         </>

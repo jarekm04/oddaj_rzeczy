@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-const Select = ({showSelect, handleShowSelect, register}) => {
-    const [num, setNum] = useState('');
+const Select = ({showSelect, handleShowSelect, register, getValues, handleMoveForward, moveForward, handleMoveBackward}) => {
     const options = [1, 2, 3, 4, 5];
 
     return (
@@ -17,20 +16,21 @@ const Select = ({showSelect, handleShowSelect, register}) => {
                     <div className="select-box">
                         Liczba 60l worków:
                         <div className={showSelect ? "box rotateArrow" : "box"} onClick={handleShowSelect}>
-                            {num ? num : "--wybierz--"}
+                            {getValues("bags") ? getValues("bags") : "--wybierz--"}
                         </div>
                     </div>
                     <select size="5" className={showSelect ? "select-active" : "select-none"} onClick={handleShowSelect} {...register("bags", { required: true })}>
                         {options.map((option) => (
-                            <option key={option} value={option} onClick={() => setNum(option)}>
+                            <option key={option} value={option} >
                                 {option}
                             </option>
                         ))}
                     </select>
+                    {!moveForward ? <p className="errorsMsg">Proszę wybrać jedno z pól</p> : null}
                 </div>
                 <div className="sendStuffForm__buttons">
-                    <div className="sendStuffForm__btn">Wstecz</div>
-                    <div className="sendStuffForm__btn">Dalej</div>
+                    <div className="sendStuffForm__btn" onClick={handleMoveBackward}>Wstecz</div>
+                    <div className="sendStuffForm__btn" onClick={() => handleMoveForward("bags")}>Dalej</div>
                 </div>
             </div>
         </>

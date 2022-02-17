@@ -2,7 +2,7 @@ import React from 'react';
 import icon1 from '../../../assets/Icon-1.svg';
 import icon4 from '../../../assets/Icon-4.svg';
 
-const Review = ({getValues}) => {
+const Review = ({getValues, moveForward, handleMoveForward, handleMoveBackward}) => {
     const bags = getValues("bags");
     const stuff = getValues("stuff");
     const helpgroups = getValues("helpgroups");
@@ -73,7 +73,7 @@ const Review = ({getValues}) => {
                     </section>
                 </div>
                 <div className="sendStuffForm__buttons">
-                    <div className="sendStuffForm__btn">Wstecz</div>
+                    <div className="sendStuffForm__btn" onClick={handleMoveBackward}>Wstecz</div>
                     <button type="submit" className="sendStuffForm__btn">Potwierdzam</button>
                 </div>
             </div>

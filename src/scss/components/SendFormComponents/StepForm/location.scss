@@ -1,5 +1,5 @@
 .form__location {
-  height: 329px;
+  height: 370px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -8,10 +8,11 @@
     align-items: center;
     position: relative;
     width: 300px;
-    height: 49px;
+    min-height: 49px;
     font-size: 1.5rem;
     font-weight: lighter;
     padding-left: 15px;
+    margin-bottom: 5px;
     cursor: pointer;
     border: 1px solid $color-darkGray;
     &:after {
@@ -55,12 +56,12 @@
   .helpgroups {
     .helpgroups__title {
       @include formH2Subtitle;
+      margin-top: 10px;
     }
     .helpgroups__squares {
       display: flex;
       flex-wrap: wrap;
       margin-top: 20px;
-      margin-bottom: 15px;
       .square {
         margin-right: 30px;
         margin-bottom: 15px;
@@ -87,6 +88,7 @@
     }
   }
   .organisation {
+    margin-top: 20px;
     .organisation__title {
       @include formH2Subtitle;
     }

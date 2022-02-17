@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 
-const Location = ({showSelect, setShowSelect, handleShowSelect, register, watch}) => {
-    const [city, setCity] = useState('');
+const Location = ({showSelect, setShowSelect, handleShowSelect, register, watch, getValues, handleMoveForward, moveForward, handleMoveBackward}) => {
     const cities = ["Poznań", "Warszawa", "Kraków", "Wrocław", "Katowice"];
     const helpgroups = ["dzieciom", "samotnym matkom", "bezdomnym", "niepełnosprawnym", "osobom starszym"];
     const optionalInput = watch('localizationSpecific');
@@ -18,11 +17,12 @@ const Location = ({showSelect, setShowSelect, handleShowSelect, register, watch}
                 <h2 className="form__title">Lokalizacja:</h2>
                 <div className="form__location">
                     <div className={showSelect ? "box rotateArrow" : "box"} onClick={handleShowSelect}>
-                        {city ? city : "--wybierz--"}
+                        {getValues("localization") ? getValues("localization") : "--wybierz--"}
                     </div>
+                    {!moveForward ? <p className="errorsMsg">Proszę wybrać lokalizację</p> : null}
                     <select size="5" className={showSelect ? "select-active" : "select-none"} onClick={handleShowSelect} {...register("localization", { required: true })}>
                         {cities.map((city) => (
-                            <option key={city} value={city} onClick={() => setCity(city)}>
+                            <option key={city} value={city}>
                                 {city}
                             </option>
                         ))}
@@ -32,11 +32,12 @@ const Location = ({showSelect, setShowSelect, handleShowSelect, register, watch}
                         <div className="helpgroups__squares">
                             {helpgroups.map((element, index) => (
                                 <div className="square" key={index}>
-                                    <input type="checkbox" id={`check${index}`} value={element} {...register("helpgroups", {required: !optionalInput})}/>
-                                    <label htmlFor={`check${index}`}>{element}</label>
+                                    <input type="checkbox" id={`check${index}`} value={element} {...register("helpgroups", {required: !optionalInput})} />
+                                    <label htmlFor={`check${index}`} className={!moveForward ? "error" : null}>{element}</label>
                                 </div>
                             ))}
                         </div>
+                        {!moveForward ? <p className="errorsMsg">Proszę wybrać co najmniej jedno pole</p> : null}
                     </div>
                     <div className="organisation">
                         <p className="organisation__title">Wpisz nazwę konkretnej organizacji (opcjonalnie)</p>
@@ -44,8 +45,8 @@ const Location = ({showSelect, setShowSelect, handleShowSelect, register, watch}
                     </div>
                 </div>
                 <div className="sendStuffForm__buttons">
-                    <div className="sendStuffForm__btn">Wstecz</div>
-                    <div className="sendStuffForm__btn">Dalej</div>
+                    <div className="sendStuffForm__btn" onClick={handleMoveBackward}>Wstecz</div>
+                    <div className="sendStuffForm__btn" onClick={() => handleMoveForward("helpgroups")}>Dalej</div>
                 </div>
             </div>
         </>

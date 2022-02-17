@@ -72,4 +72,11 @@
       }
     }
   }
+  .errorsMsg {
+    font-size: 1.2rem;
+    color: crimson;
+  }
+  .error {
+    border: 1px solid crimson !important;
+  }
 }

@@ -1,13 +1,15 @@
 .form__select {
   height: 329px;
+  width: 540px;
   display: flex;
   flex-direction: column;
+  position: relative;
   .select-box {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
     font-weight: lighter;
-
+    margin-bottom: 20px;
     .box {
       display: flex;
       align-items: center;
@@ -35,12 +37,13 @@
     }
   }
   .select-active {
+    position: absolute;
+    top: 20%;
+    left: 87%;
     width: 65px;
     font-size: 1.5rem;
     font-weight: lighter;
     color: $color-darkGray;
-    margin-left: 467px;
-    margin-top: 15px;
     background-color: transparent;
     appearance: none;
     cursor: pointer;

@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Checkboxes = ({register, navigation, errors}) => {
+const Checkboxes = ({register, handleMoveForward, moveForward}) => {
+    const stuff = ["ubrania, które nadają się do ponownego użycia", "ubrania, do wyrzucenia", "zabawki", "książki", "inne"];
 
     return (
         <>
@@ -13,30 +14,16 @@ const Checkboxes = ({register, navigation, errors}) => {
                 <p className="form__step">Krok 1/4</p>
                 <h2 className="form__title">Zaznacz co chcesz oddać:</h2>
                 <div className="form__checkboxes">
-                    <div className="input__item">
-                        <input type="radio" {...register('stuff', { required: true })} name="stuff" value="ubrania, które nadają się do ponownego użycia"/>
-                        ubrania, które nadają się do ponownego użycia
-                    </div>
-                    <div className="input__item">
-                        <input type="radio" {...register('stuff', { required: true })} name="stuff" value="ubrania, do wyrzucenia"/>
-                        ubrania, do wyrzucenia
-                    </div>
-                    <div className="input__item">
-                        <input type="radio" {...register('stuff', { required: true })} name="stuff" value="zabawki"/>
-                        zabawki
-                    </div>
-                    <div className="input__item">
-                        <input type="radio" {...register('stuff', { required: true })} name="stuff" value="książki"/>
-                        książki
-                    </div>
-                    <div className="input__item">
-                        <input type="radio" {...register('stuff', { required: true })} name="stuff" value="inne"/>
-                        inne
-                    </div>
+                    {stuff.map((item, index) => (
+                        <div className="input__item" key={index}>
+                            <input type="radio" {...register('stuff', { required: true })} name="stuff" value={item} className={!moveForward ? "error" : null}/>
+                            {item}
+                        </div>
+                    ))}
+                    {!moveForward ? <p className="errorsMsg">Proszę zaznaczyć jedno z pól</p> : null}
                 </div>
                 <div className="sendStuffForm__buttons">
-                    <p className="errorsMsg">{errors.stuff?.message}</p>
-                    <div className="sendStuffForm__btn" onClick={() => navigation.next()}>Dalej</div>
+                    <div className="sendStuffForm__btn" onClick={() => handleMoveForward("stuff")}>Dalej</div>
                 </div>
             </div>
         </>

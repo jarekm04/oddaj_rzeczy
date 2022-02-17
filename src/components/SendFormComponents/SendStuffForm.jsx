@@ -26,6 +26,7 @@ const schemaMainForm = yup.object().shape({
 
 const SendStuffForm = () => {
     const [showSelect, setShowSelect] = useState(false);
+    const [moveForward, setMoveForward] = useState(true);
     const { register, handleSubmit, watch, getValues, formState: { errors } } = useForm({
         resolver: yupResolver(schemaMainForm)
     });
@@ -33,6 +34,18 @@ const SendStuffForm = () => {
     const handleShowSelect = () => {
         !showSelect ? setShowSelect(true) : setShowSelect(false);
     }
+
+    const handleMoveForward = (item) => {
+        if (!getValues(item)) {
+            setMoveForward(false);
+        } else {
+            console.log(getValues(item))
+            navigation.next();
+            setMoveForward(true);
+        }
+    }
+
+    const handleMoveBackward = () => navigation.previous();
 
     const { step, navigation } = useStep({
         steps,
@@ -44,7 +57,7 @@ const SendStuffForm = () => {
     };
     console.log(errors);
 
-    const props = { showSelect, setShowSelect, handleShowSelect, register, watch, getValues, navigation, errors };
+    const props = { showSelect, setShowSelect, handleShowSelect, register, watch, getValues, navigation, handleMoveForward, moveForward, handleMoveBackward };
 
     const renderSwitch = () => {
         switch (step.id) {
