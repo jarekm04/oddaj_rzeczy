@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Checkboxes = ({register}) => {
+const Checkboxes = ({register, navigation, errors}) => {
 
     return (
         <>
@@ -14,28 +14,29 @@ const Checkboxes = ({register}) => {
                 <h2 className="form__title">Zaznacz co chcesz oddać:</h2>
                 <div className="form__checkboxes">
                     <div className="input__item">
-                        <input type="radio" {...register('check', { required: true })} name="check" value="ubrania, które nadają się do ponownego użycia"/>
+                        <input type="radio" {...register('stuff', { required: true })} name="stuff" value="ubrania, które nadają się do ponownego użycia"/>
                         ubrania, które nadają się do ponownego użycia
                     </div>
                     <div className="input__item">
-                        <input type="radio" {...register('check', { required: true })} name="check" value="ubrania, do wyrzucenia"/>
+                        <input type="radio" {...register('stuff', { required: true })} name="stuff" value="ubrania, do wyrzucenia"/>
                         ubrania, do wyrzucenia
                     </div>
                     <div className="input__item">
-                        <input type="radio" {...register('check', { required: true })} name="check" value="zabawki"/>
+                        <input type="radio" {...register('stuff', { required: true })} name="stuff" value="zabawki"/>
                         zabawki
                     </div>
                     <div className="input__item">
-                        <input type="radio" {...register('check', { required: true })} name="check" value="książki"/>
+                        <input type="radio" {...register('stuff', { required: true })} name="stuff" value="książki"/>
                         książki
                     </div>
                     <div className="input__item">
-                        <input type="radio" {...register('check', { required: true })} name="check" value="inne"/>
+                        <input type="radio" {...register('stuff', { required: true })} name="stuff" value="inne"/>
                         inne
                     </div>
                 </div>
                 <div className="sendStuffForm__buttons">
-                    <div className="sendStuffForm__btn">Dalej</div>
+                    <p className="errorsMsg">{errors.stuff?.message}</p>
+                    <div className="sendStuffForm__btn" onClick={() => navigation.next()}>Dalej</div>
                 </div>
             </div>
         </>

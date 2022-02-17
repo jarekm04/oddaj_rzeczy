@@ -4,7 +4,7 @@ import icon4 from '../../../assets/Icon-4.svg';
 
 const Review = ({getValues}) => {
     const bags = getValues("bags");
-    const check = getValues("check");
+    const stuff = getValues("stuff");
     const helpgroups = getValues("helpgroups");
     const localizationSpecific = getValues("localizationSpecific");
     const localization = getValues("localization");
@@ -27,7 +27,7 @@ const Review = ({getValues}) => {
                         <div className="gift__item">
                             <img src={icon1} alt="tshirt"/>
                             <p className="icon-text">
-                                {`${bags} ${bags === "1"? "worek" : "worki"}, ${check}, ${localizationSpecific}${helpgroups.length && localizationSpecific? ", " : ""}${helpgroups.join(", ")}`}
+                                {`${bags} ${bags === "1"? "worek" : "worki"}, ${stuff}, ${localizationSpecific}${helpgroups.length && localizationSpecific? ", " : ""}${helpgroups.join(", ")}`}
                             </p>
                         </div>
                         <div className="gift__item">
