@@ -14,11 +14,23 @@
       font-weight: lighter;
       margin-right: 20px;
     }
-    input[type="text"] {
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    input[type="number"] {
+      width: 200px;
       height: 30px;
       font-size: 1rem;
       background-color: transparent;
       border: 1px solid $color-darkGray;
+    }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield;
     }
     #note {
       height: 100px;

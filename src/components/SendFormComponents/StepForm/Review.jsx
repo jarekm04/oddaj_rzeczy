@@ -2,7 +2,21 @@ import React from 'react';
 import icon1 from '../../../assets/Icon-1.svg';
 import icon4 from '../../../assets/Icon-4.svg';
 
-const Review = () => {
+const Review = ({getValues}) => {
+    const bags = getValues("bags");
+    const check = getValues("check");
+    const helpgroups = getValues("helpgroups");
+    const localizationSpecific = getValues("localizationSpecific");
+    const localization = getValues("localization");
+    const street = getValues("street");
+    const city = getValues("city");
+    const postCode = getValues("postCode");
+    const phone = getValues("phone");
+    const date = getValues("date");
+    const time = getValues("time");
+    const note = getValues("note");
+
+
     return (
         <>
             <div className="sendStuffForm__form">
@@ -12,11 +26,13 @@ const Review = () => {
                         <p className="giftSummary__title">Oddajesz:</p>
                         <div className="gift__item">
                             <img src={icon1} alt="tshirt"/>
-                            <p className="icon-text">4 worki, ubrania w dobrym stanie, dzieciom</p>
+                            <p className="icon-text">
+                                {`${bags} ${bags === "1"? "worek" : "worki"}, ${check}, ${localizationSpecific}${helpgroups.length && localizationSpecific? ", " : ""}${helpgroups.join(", ")}`}
+                            </p>
                         </div>
                         <div className="gift__item">
                             <img src={icon4} alt="recycling"/>
-                            <p className="icon-text">dla lokalizacji: Warszawa</p>
+                            <p className="icon-text">{`dla lokalizacji: ${localization}`}</p>
                         </div>
                     </section>
                     <section className="userDetails">
@@ -24,34 +40,34 @@ const Review = () => {
                             <p className="address__title">Adres odbioru:</p>
                             <div className="item">
                                 <p className="item__name">Ulica</p>
-                                <p className="item__data">Prosta 51</p>
+                                <p className="item__data">{street}</p>
                             </div>
                             <div className="item">
                                 <p className="item__name">Miasto</p>
-                                <p className="item__data">Warszawa</p>
+                                <p className="item__data">{city}</p>
                             </div>
                             <div className="item">
                                 <p className="item__name">Kod pocztowy</p>
-                                <p className="item__data">90-209</p>
+                                <p className="item__data">{postCode}</p>
                             </div>
                             <div className="item">
                                 <p className="item__name">Numer telefonu</p>
-                                <p className="item__data">473 839 483</p>
+                                <p className="item__data">{phone}</p>
                             </div>
                         </div>
                         <div className="userDetails__date">
                             <p className="userDetails__title">Termin odbioru:</p>
                             <div className="item">
                                 <p className="item__name">Data</p>
-                                <p className="item__data">17.10.2019</p>
+                                <p className="item__data">{date}</p>
                             </div>
                             <div className="item">
                                 <p className="item__name">Godzina</p>
-                                <p className="item__data">17:30</p>
+                                <p className="item__data">{time}</p>
                             </div>
                             <div className="item">
                                 <p className="item__name">Uwagi dla kuriera</p>
-                                <p className="item__data">...</p>
+                                <p className="item__data">{note}</p>
                             </div>
                         </div>
                     </section>

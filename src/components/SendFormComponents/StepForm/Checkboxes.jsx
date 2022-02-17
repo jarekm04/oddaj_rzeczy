@@ -14,23 +14,23 @@ const Checkboxes = ({register}) => {
                 <h2 className="form__title">Zaznacz co chcesz oddać:</h2>
                 <div className="form__checkboxes">
                     <div className="input__item">
-                        <input type="radio" {...register('check', { required: true })} name="check" value="goodClothes"/>
+                        <input type="radio" {...register('check', { required: true })} name="check" value="ubrania, które nadają się do ponownego użycia"/>
                         ubrania, które nadają się do ponownego użycia
                     </div>
                     <div className="input__item">
-                        <input type="radio" {...register('check', { required: true })} name="check" value="badClothes"/>
+                        <input type="radio" {...register('check', { required: true })} name="check" value="ubrania, do wyrzucenia"/>
                         ubrania, do wyrzucenia
                     </div>
                     <div className="input__item">
-                        <input type="radio" {...register('check', { required: true })} name="check" value="toys"/>
+                        <input type="radio" {...register('check', { required: true })} name="check" value="zabawki"/>
                         zabawki
                     </div>
                     <div className="input__item">
-                        <input type="radio" {...register('check', { required: true })} name="check" value="books"/>
+                        <input type="radio" {...register('check', { required: true })} name="check" value="książki"/>
                         książki
                     </div>
                     <div className="input__item">
-                        <input type="radio" {...register('check', { required: true })} name="check" value="other"/>
+                        <input type="radio" {...register('check', { required: true })} name="check" value="inne"/>
                         inne
                     </div>
                 </div>

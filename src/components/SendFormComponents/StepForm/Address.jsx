@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Address = () => {
+const Address = ({register}) => {
     return (
         <>
             <div className="sendStuffForm__warn">
@@ -15,34 +15,34 @@ const Address = () => {
                         <p className="dataTitle">Adres odbioru:</p>
                         <div className="data__box">
                             <label htmlFor="street">Ulica</label>
-                            <input type="text" id="street"/>
+                            <input type="text" id="street" {...register("street", {required: true, min: 2})}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="city">Miasto</label>
-                            <input type="text" id="city"/>
+                            <input type="text" id="city" {...register("city", {required: true, min: 2})}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="postCode">Kod pocztowy</label>
-                            <input type="text" id="postCode"/>
+                            <input type="text" id="postCode" {...register("postCode", {required: true, pattern: "{2}-{3}"})}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="phone">Telefon</label>
-                            <input type="text" id="phone"/>
+                            <input type="number" id="phone" {...register("phone", {required: true, minLength: 9, maxLength: 9})}/>
                         </div>
                     </div>
                     <div className="timeData">
                         <p className="dataTitle">Termin odbioru:</p>
                         <div className="data__box">
                             <label htmlFor="date">Data</label>
-                            <input type="text" id="date"/>
+                            <input type="date" id="date" {...register("date", {required: true})}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="time">Godzina</label>
-                            <input type="text" id="time"/>
+                            <input type="time" id="time" {...register("time", {required: true})}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="note">Uwagi dla kuriera</label>
-                            <textarea id="note"/>
+                            <textarea id="note" {...register("note", {})}/>
                         </div>
                     </div>
                 </div>

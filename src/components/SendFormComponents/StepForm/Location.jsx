@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 const Location = ({showSelect, setShowSelect, handleShowSelect, register, watch}) => {
     const [city, setCity] = useState('');
     const cities = ["Poznań", "Warszawa", "Kraków", "Wrocław", "Katowice"];
+    const helpgroups = ["dzieciom", "samotnym matkom", "bezdomnym", "niepełnosprawnym", "osobom starszym"];
     const optionalInput = watch('localizationSpecific');
 
 
@@ -29,26 +30,12 @@ const Location = ({showSelect, setShowSelect, handleShowSelect, register, watch}
                     <div className="helpgroups">
                         <p className="helpgroups__title">Komu chcesz pomóc?</p>
                         <div className="helpgroups__squares">
-                            <div className="square">
-                                <input type="checkbox" id="check1" value="kids" {...register("helpgroups", {required: !optionalInput})}/>
-                                <label htmlFor="check1">dzieciom</label>
-                            </div>
-                            <div className="square">
-                                <input type="checkbox" id="check2" value="singleMothers" {...register("helpgroups", {required: !optionalInput})}/>
-                                <label htmlFor="check2">samotnym matkom</label>
-                            </div>
-                            <div className="square">
-                                <input type="checkbox" id="check3" value="homeless" {...register("helpgroups", {required: !optionalInput})}/>
-                                <label htmlFor="check3">bezdomnym</label>
-                            </div>
-                            <div className="square">
-                                <input type="checkbox" id="check4" value="disabled" {...register("helpgroups", {required: !optionalInput})}/>
-                                <label htmlFor="check4">niepełnosprawnym</label>
-                            </div>
-                            <div className="square">
-                                <input type="checkbox" id="check5" value="elderly" {...register("helpgroups", {required: !optionalInput})}/>
-                                <label htmlFor="check5">osobom starszym</label>
-                            </div>
+                            {helpgroups.map((element, index) => (
+                                <div className="square" key={index}>
+                                    <input type="checkbox" id={`check${index}`} value={element} {...register("helpgroups", {required: !optionalInput})}/>
+                                    <label htmlFor={`check${index}`}>{element}</label>
+                                </div>
+                            ))}
                         </div>
                     </div>
                     <div className="organisation">

@@ -22,16 +22,18 @@ import BearBg from "../../assets/Background-Form-mini.jpg";
 
 const SendStuffForm = () => {
     const [showSelect, setShowSelect] = useState(false);
-    const { register, handleSubmit, formState: { errors }, watch } = useForm();
+    const { register, handleSubmit, formState: { errors }, watch, getValues } = useForm();
 
-    const handleShowSelect = (e) => {
+    const handleShowSelect = () => {
         !showSelect ? setShowSelect(true) : setShowSelect(false);
     }
 
-    const props = { showSelect, setShowSelect, handleShowSelect, register, watch };
+    const props = { showSelect, setShowSelect, handleShowSelect, register, watch, getValues };
 
     // const schemaGiveForm = Yup
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        console.log(data);
+    };
     console.log(errors);
 
     // const { step, navigation } = useStep({
