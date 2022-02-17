@@ -47,8 +47,8 @@ const Address = () => {
                     </div>
                 </div>
                 <div className="sendStuffForm__buttons">
-                    <button className="sendStuffForm__btn">Wstecz</button>
-                    <button className="sendStuffForm__btn">Dalej</button>
+                    <div className="sendStuffForm__btn">Wstecz</div>
+                    <div className="sendStuffForm__btn">Dalej</div>
                 </div>
             </div>
         </>

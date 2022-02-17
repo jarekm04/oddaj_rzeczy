@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 import {useStep} from "react-hooks-helper";
+import {useForm} from "react-hook-form";
+import {yupResolver} from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import Checkboxes from "./StepForm/Checkboxes";
 import Select from "./StepForm/Select";
 import Location from "./StepForm/Location";
@@ -24,12 +27,17 @@ const SendStuffForm = () => {
         !showSelect ? setShowSelect(true) : setShowSelect(false);
     }
 
+    const props = { showSelect, setShowSelect, handleShowSelect };
+
+    // const schemaGiveForm = Yup
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = data => console.log(data);
+    console.log(errors);
+
     // const { step, navigation } = useStep({
     //     steps,
     //     initialStep: 0,
     // });
-
-    const props = { showSelect, setShowSelect, handleShowSelect };
 
     // const renderSwitch = () => {
     //     switch (step.id) {
@@ -51,14 +59,14 @@ const SendStuffForm = () => {
     // }
 
     return (
-        <form className="sendStuffForm submit">
+        <form className="sendStuffForm submit" onSubmit={handleSubmit(onSubmit)}>
             {/*{renderSwitch(step.id)}*/}
-            {/*<Checkboxes />*/}
-            {/*<Select />*/}
-            {/*<Location {...props} />*/}
-            {/*<Address />*/}
-            {/*<Review />*/}
-            <Submit />
+            <Checkboxes />
+            <Select />
+            <Location {...props} />
+            <Address />
+            <Review />
+            {/*<Submit />*/}
             <img src={BearBg} alt="bear" className="sendStuffForm__bearBg"/>
         </form>
     )

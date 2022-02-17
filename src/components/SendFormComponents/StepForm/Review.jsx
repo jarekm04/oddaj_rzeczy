@@ -57,8 +57,8 @@ const Review = () => {
                     </section>
                 </div>
                 <div className="sendStuffForm__buttons">
-                    <button className="sendStuffForm__btn">Wstecz</button>
-                    <button className="sendStuffForm__btn">Potwierdzam</button>
+                    <div className="sendStuffForm__btn">Wstecz</div>
+                    <button type="submit" className="sendStuffForm__btn">Potwierdzam</button>
                 </div>
             </div>
         </>
