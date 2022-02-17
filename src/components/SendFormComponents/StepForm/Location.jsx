@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const Location = ({showSelect, setShowSelect, handleShowSelect}) => {
+const Location = ({showSelect, setShowSelect, handleShowSelect, register}) => {
+    const [city, setCity] = useState('');
+    const cities = ["Poznań", "Warszawa", "Kraków", "Wrocław", "Katowice"];
+
     return (
         <>
             <div className="sendStuffForm__warn">
@@ -12,14 +15,14 @@ const Location = ({showSelect, setShowSelect, handleShowSelect}) => {
                 <h2 className="form__title">Lokalizacja:</h2>
                 <div className="form__location">
                     <div className={showSelect ? "box rotateArrow" : "box"} onClick={handleShowSelect}>
-                        --wybierz--
+                        {city ? city : "--wybierz--"}
                     </div>
-                    <select size="5" className={showSelect ? "select-active" : "select-none"} onClick={handleShowSelect}>
-                        <option value="poznan">Poznań</option>
-                        <option value="warszawa">Warszawa</option>
-                        <option value="krakow">Kraków</option>
-                        <option value="wroclaw">Wrocław</option>
-                        <option value="katowice">Katowice</option>
+                    <select size="5" className={showSelect ? "select-active" : "select-none"} onClick={handleShowSelect} {...register("localization", { required: true })}>
+                        {cities.map((city) => (
+                            <option key={city} value={city} onClick={() => setCity(city)}>
+                                {city}
+                            </option>
+                        ))}
                     </select>
                     <div className="helpgroups">
                         <p className="helpgroups__title">Komu chcesz pomóc?</p>

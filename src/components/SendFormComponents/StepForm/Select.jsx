@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 
-const Select = ({showSelect, handleShowSelect}) => {
+const Select = ({showSelect, handleShowSelect, register}) => {
+    const [num, setNum] = useState('');
+    const options = [1, 2, 3, 4, 5];
 
     return (
         <>
@@ -15,15 +17,15 @@ const Select = ({showSelect, handleShowSelect}) => {
                     <div className="select-box">
                         Liczba 60l worków:
                         <div className={showSelect ? "box rotateArrow" : "box"} onClick={handleShowSelect}>
-                            --wybierz--
+                            {num ? num : "--wybierz--"}
                         </div>
                     </div>
-                    <select size="5" className={showSelect ? "select-active" : "select-none"} onClick={handleShowSelect}>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                    <select size="5" className={showSelect ? "select-active" : "select-none"} onClick={handleShowSelect} {...register("bags", { required: true })}>
+                        {options.map((option) => (
+                            <option key={option} value={option} onClick={() => setNum(option)}>
+                                {option}
+                            </option>
+                        ))}
                     </select>
                 </div>
                 <div className="sendStuffForm__buttons">

@@ -1,14 +1,6 @@
 import React from 'react';
 
-const Checkboxes = ({formData, setFormData, navigation}) => {
-    // const handleCheckbox = (e) => {
-    //     const {name, value, type, checked} = e.target;
-    //
-    //     setFormData((prevData) => ({
-    //         ...prevData,
-    //         [name]: type === 'checkbox' ? checked : value,
-    //     }));
-    // }
+const Checkboxes = ({register}) => {
 
     return (
         <>
@@ -22,19 +14,24 @@ const Checkboxes = ({formData, setFormData, navigation}) => {
                 <h2 className="form__title">Zaznacz co chcesz oddać:</h2>
                 <div className="form__checkboxes">
                     <div className="input__item">
-                        <input type="radio" />ubrania, które nadają się do ponownego użycia
+                        <input type="radio" {...register('check', { required: true })} name="check" value="goodClothes"/>
+                        ubrania, które nadają się do ponownego użycia
                     </div>
                     <div className="input__item">
-                        <input type="radio" />ubrania, do wyrzucenia
+                        <input type="radio" {...register('check', { required: true })} name="check" value="badClothes"/>
+                        ubrania, do wyrzucenia
                     </div>
                     <div className="input__item">
-                        <input type="radio" />zabawki
+                        <input type="radio" {...register('check', { required: true })} name="check" value="toys"/>
+                        zabawki
                     </div>
                     <div className="input__item">
-                        <input type="radio" />książki
+                        <input type="radio" {...register('check', { required: true })} name="check" value="books"/>
+                        książki
                     </div>
                     <div className="input__item">
-                        <input type="radio" />inne
+                        <input type="radio" {...register('check', { required: true })} name="check" value="other"/>
+                        inne
                     </div>
                 </div>
                 <div className="sendStuffForm__buttons">

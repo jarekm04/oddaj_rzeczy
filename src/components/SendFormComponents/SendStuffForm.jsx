@@ -22,15 +22,15 @@ import BearBg from "../../assets/Background-Form-mini.jpg";
 
 const SendStuffForm = () => {
     const [showSelect, setShowSelect] = useState(false);
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const handleShowSelect = () => {
+    const handleShowSelect = (e) => {
         !showSelect ? setShowSelect(true) : setShowSelect(false);
     }
 
-    const props = { showSelect, setShowSelect, handleShowSelect };
+    const props = { showSelect, setShowSelect, handleShowSelect, register };
 
     // const schemaGiveForm = Yup
-    const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
     console.log(errors);
 
@@ -61,11 +61,11 @@ const SendStuffForm = () => {
     return (
         <form className="sendStuffForm submit" onSubmit={handleSubmit(onSubmit)}>
             {/*{renderSwitch(step.id)}*/}
-            <Checkboxes />
-            <Select />
+            <Checkboxes {...props} />
+            <Select {...props} />
             <Location {...props} />
-            <Address />
-            <Review />
+            <Address {...props} />
+            <Review {...props} />
             {/*<Submit />*/}
             <img src={BearBg} alt="bear" className="sendStuffForm__bearBg"/>
         </form>
