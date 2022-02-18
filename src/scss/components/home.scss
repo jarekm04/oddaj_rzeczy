@@ -3,6 +3,7 @@
   display: flex;
   @media (max-width: 1000px) {
     height: calc(80vh - 82px);
+    margin-bottom: 30px;
   }
   .bg-box {
     width: 45%;

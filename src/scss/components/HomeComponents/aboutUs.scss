@@ -7,6 +7,9 @@
   @media (max-width: 1000px) {
     height: 600px;
   }
+  @media (max-width: 800px) {
+    height: 500px;
+  }
   .aboutUs__contentBox {
     display: flex;
     flex-direction: column;
@@ -35,6 +38,10 @@
       @include decorationLine;
       margin-top: 25px;
       margin-bottom: 50px;
+      @media (max-width: 800px) {
+        margin-top: 10px;
+        margin-bottom: 15px;
+      }
     }
     .aboutUs__text {
       font-size: 1.875rem;
@@ -43,6 +50,7 @@
       margin-bottom: 40px;
       @media (max-width: 1200px) {
         font-size: 1.4rem;
+        margin-bottom: 0;
       }
       @media (max-width: 1000px) {
         font-size: 1.2rem;
