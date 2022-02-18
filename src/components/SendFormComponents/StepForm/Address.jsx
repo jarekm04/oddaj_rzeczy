@@ -1,8 +1,7 @@
 import React from 'react';
 
-const Address = ({register, moveForward, handleMoveForward, handleMoveBackward}) => {
-    const userMustHaveDatas = ["street", "city", "postCode", "phone", "date", "time"];
-
+const Address = ({register, moveForward, handleMoveBackward, handleMoveForward}) => {
+    const userMustHaveData = ["street", "city", "postCode", "phone", "date", "time"];
 
     return (
         <>
@@ -52,13 +51,7 @@ const Address = ({register, moveForward, handleMoveForward, handleMoveBackward})
                 {!moveForward ? <p className="errorsMsg">Proszę uzupełnić wszystkie obowiązkowe dane</p> : null}
                 <div className="sendStuffForm__buttons">
                     <div className="sendStuffForm__btn" onClick={handleMoveBackward}>Wstecz</div>
-                    <div className="sendStuffForm__btn"
-                         onClick={() => {
-                             handleMoveForward("street")
-                             handleMoveForward("city")
-                         }
-                         }
-                    >Dalej</div>
+                    <div className="sendStuffForm__btn" onClick={() => handleMoveForward(userMustHaveData)}>Dalej</div>
                 </div>
             </div>
         </>

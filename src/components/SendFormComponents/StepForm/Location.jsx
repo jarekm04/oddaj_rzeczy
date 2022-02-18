@@ -17,9 +17,8 @@ const Location = ({showSelect, setShowSelect, handleShowSelect, register, watch,
                 <h2 className="form__title">Lokalizacja:</h2>
                 <div className="form__location">
                     <div className={showSelect ? "box rotateArrow" : "box"} onClick={handleShowSelect}>
-                        {getValues("localization") ? getValues("localization") : "--wybierz--"}
+                        {getValues("localization") ? getValues("localization") : "--wybierz-- (opcjonalnie)"}
                     </div>
-                    {!moveForward ? <p className="errorsMsg">Proszę wybrać lokalizację</p> : null}
                     <select size="5" className={showSelect ? "select-active" : "select-none"} onClick={handleShowSelect} {...register("localization", { required: true })}>
                         {cities.map((city) => (
                             <option key={city} value={city}>

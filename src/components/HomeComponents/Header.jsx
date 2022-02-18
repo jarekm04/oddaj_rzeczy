@@ -3,6 +3,9 @@ import {Link} from "react-router-dom";
 import {Link as LinkScroll} from "react-scroll";
 import {auth} from "../../firebase";
 import {signOut} from "firebase/auth";
+import {GiHambuerMenu} from "react-icons/gi";
+import {AiOutlineCloseCircle} from "react-icons/ai";
+
 
 const Header = ({isUserLogged, setIsUserLogged}) => {
 

@@ -36,12 +36,23 @@ const SendStuffForm = () => {
     }
 
     const handleMoveForward = (item) => {
-        if (!getValues(item)) {
-            setMoveForward(false);
+        if (Array.isArray(item)) {
+            const checkEveryItem =  item.every((el) => getValues(el));
+            if (checkEveryItem) {
+                navigation.next();
+                setMoveForward(true);
+            }
+            else {
+                setMoveForward(false);
+            }
+            console.log("Tutaj jest tablica")
         } else {
-            console.log(getValues(item))
-            navigation.next();
-            setMoveForward(true);
+            if (!getValues(item)) {
+                setMoveForward(false);
+            } else {
+                navigation.next();
+                setMoveForward(true);
+            }
         }
     }
 
@@ -53,11 +64,11 @@ const SendStuffForm = () => {
     });
 
     const onSubmit = data => {
-        console.log(data);
+        console.log(data, "data");
     };
     console.log(errors);
 
-    const props = { showSelect, setShowSelect, handleShowSelect, register, watch, getValues, navigation, handleMoveForward, moveForward, handleMoveBackward };
+    const props = { showSelect, setShowSelect, handleShowSelect, register, watch, getValues, navigation, moveForward, handleMoveForward, handleMoveBackward };
 
     const renderSwitch = () => {
         switch (step.id) {
