@@ -29,7 +29,7 @@ const Foundation = () => {
                         <p className="left__desc">{item.leftDesc2}</p>
                     </div>
                     <div className="box-right">
-                        <p className="right_desc">{item.rightDesc2}</p>
+                        <p className="right__desc">{item.rightDesc2}</p>
                     </div>
                 </div>
                 <div className="text-box">
@@ -38,7 +38,7 @@ const Foundation = () => {
                         <p className="left__desc">{item.leftDesc3}</p>
                     </div>
                     <div className="box-right">
-                        <p className="right_desc">{item.rightDesc3}</p>
+                        <p className="right__desc">{item.rightDesc3}</p>
                     </div>
                 </div>
             </div>

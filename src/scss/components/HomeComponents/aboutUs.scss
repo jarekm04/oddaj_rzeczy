@@ -1,6 +1,12 @@
 .aboutUs {
   display: flex;
   height: 935px;
+  @media (max-width: 1200px) {
+    height: 700px;
+  }
+  @media (max-width: 1000px) {
+    height: 600px;
+  }
   .aboutUs__contentBox {
     display: flex;
     flex-direction: column;
@@ -10,8 +16,20 @@
     background-color: $color-white;
     padding-left: 120px;
     padding-right: 120px;
+    @media (max-width: 1200px) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+    @media (max-width: 1000px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
     .aboutUs__title {
       font-size: 2.375rem;
+      @media (max-width: 1000px) {
+        font-size: 1.6rem;
+        margin-top: 30px;
+      }
     }
     .decoration {
       @include decorationLine;
@@ -23,11 +41,20 @@
       line-height: 3rem;
       text-align: center;
       margin-bottom: 40px;
+      @media (max-width: 1200px) {
+        font-size: 1.4rem;
+      }
+      @media (max-width: 1000px) {
+        font-size: 1.2rem;
+      }
     }
     .signature {
       width: 210px;
       height: 150px;
       align-self: flex-end;
+      @media (max-width: 1000px) {
+        width: 130px;
+      }
     }
   }
   .aboutUs__photo {

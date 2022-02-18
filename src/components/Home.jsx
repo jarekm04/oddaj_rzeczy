@@ -7,6 +7,7 @@ import SimpleSteps from "./HomeComponents/SimpleSteps";
 import AboutUs from "./HomeComponents/AboutUs";
 import Foundation from "./HomeComponents/Foundation";
 import Contact from "./HomeComponents/Contact";
+import Footer from "./HomeComponents/Footer";
 
 const Home = () => {
     return (
@@ -31,6 +32,7 @@ const Home = () => {
             <AboutUs />
             <Foundation />
             <Contact />
+            <Footer />
         </>
     );
 };

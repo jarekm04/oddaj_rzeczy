@@ -1,7 +1,12 @@
 .contact {
   height: 800px;
   display: flex;
-  flex-wrap: wrap;
+  @media (max-width: 1200px) {
+    height: 700px;
+  }
+  @media (max-width: 1000px) {
+    height: 600px;
+  }
   .bg-box {
     width: 50%;
     height: 100%;
@@ -11,6 +16,14 @@
       opacity: 0.2;
       object-fit: cover;
       object-position: 6%;
+      z-index: -2;
+      @media (max-width: 1300px) {
+        height: auto;
+        object-fit: contain;
+        margin-left: 30%;
+        margin-top: 40%;
+        transform: scale(1.7);
+      }
     }
   }
   .form {
@@ -20,11 +33,19 @@
     width: 40%;
     margin-right: 70px;
     margin-left: 20px;
+    z-index: 2;
     .form__title {
       font-size: 2.375rem;
       text-align: center;
       margin-bottom: 25px;
       margin-top: 100px;
+      @media (max-width: 1200px) {
+        margin-top: 80px;
+      }
+      @media (max-width: 1000px) {
+        font-size: 1.6rem;
+        margin-top: 70px;
+      }
     }
     .decoration {
       @include decorationLine;
@@ -44,13 +65,23 @@
       justify-content: space-between;
       margin-bottom: 40px;
       height: 70px;
+      @media (max-width: 820px) {
+        flex-direction: column;
+      }
       .oneInput {
         min-width: 230px;
+        @media (max-width: 820px) {
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
     .label {
       font-size: 1rem;
       font-weight: bold;
+      @media (max-width: 1000px) {
+        font-size: 0.8rem;
+      }
     }
     input,
     textarea {
@@ -59,11 +90,17 @@
       border: none;
       border-bottom: 1px solid $color-gray;
       padding-bottom: 3px;
+      @media (max-width: 1000px) {
+        font-size: 0.8rem;
+      }
     }
     textarea {
       height: 100px;
       overflow:hidden;
       resize: none;
+      @media (max-width: 1000px) {
+        height: 70px;
+      }
     }
     input::placeholder,
     textarea::placeholder {
@@ -82,6 +119,11 @@
       &:hover {
         background-color: $color-white;
       }
+      @media (max-width: 1000px) {
+        width: 100px;
+        height: 33px;
+        font-size: 0.8rem;
+      }
     }
     .errorsMsg {
       font-size: 0.8rem;
@@ -89,23 +131,10 @@
       color: red;
     }
   }
-  .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: -50px;
-    .footer__text {
-      font-size: 1.125rem;
-    }
-    .footer__media {
-      align-self: flex-end;
-      margin-top: -30px;
-      margin-right: 90px;
-      img {
-        margin-right: 20px;
-        cursor: pointer;
-      }
-    }
+}
+
+@media screen and (max-width: 1100px) {
+  .contact {
+
   }
 }

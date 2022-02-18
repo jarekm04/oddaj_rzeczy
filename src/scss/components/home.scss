@@ -1,6 +1,9 @@
 .welcome {
   height: calc(100vh - 82px);
   display: flex;
+  @media (max-width: 1000px) {
+    height: calc(80vh - 82px);
+  }
   .bg-box {
     width: 45%;
     height: calc(100% + 82px);
@@ -11,6 +14,9 @@
       height: 100%;
       object-fit: cover;
       object-position: center right;
+      @media (max-width: 1200px) {
+            object-fit: contain;
+      }
     }
   }
   .welcome__content {
@@ -26,6 +32,9 @@
         text-align: center;
         line-height: 2.7rem;
         margin-bottom: 25px;
+        @media (max-width: 1000px) {
+          font-size: 1.6rem;
+        }
       }
       .decoration {
         @include decorationLine;
@@ -37,6 +46,9 @@
         justify-content: space-evenly;
         .main__btn {
           @include giveBtn;
+          &:first-of-type{
+            margin-right: 15px;
+          }
         }
       }
     }

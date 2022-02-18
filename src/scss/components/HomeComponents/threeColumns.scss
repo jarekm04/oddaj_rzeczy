@@ -4,6 +4,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: 1000px) {
+    height: 220px;
+  }
   .stats {
     width: 390px;
     height: 252px;
@@ -11,20 +14,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    @media (max-width: 1000px) {
+      height: 170px;
+    }
     .stats__num {
       font-size: 5.625rem;
       font-weight: normal;
       color: $color-brown;
+      @media (max-width: 1000px) {
+        font-size: 3rem;
+      }
     }
     .stats__title {
       font-size: 1.125rem;
       margin: 30px 0;
+      @media (max-width: 1000px) {
+        font-size: 1rem;
+      }
     }
     .stats__desc {
       font-size: 1rem;
       font-family: $font-alt;
       text-align: center;
       line-height: 1.4rem;
+      @media (max-width: 1000px) {
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+      }
     }
   }
 }

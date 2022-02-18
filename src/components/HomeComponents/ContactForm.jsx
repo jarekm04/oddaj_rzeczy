@@ -45,7 +45,7 @@ const ContactForm = () => {
                 <div className="oneInput">
                     <label className="label">Wpisz swoje imię</label>
                     <input type="text" placeholder="Krzysztof" {...register("name", {required: true, min: 2, maxLength: 80})}/>
-                    <p className="errorsMsg">{errors.firstName?.message}</p>
+                    <p className="errorsMsg">{errors.name?.message}</p>
                 </div>
                 <div className="oneInput">
                     <label className="label">Wpisz swój email</label>
@@ -55,7 +55,7 @@ const ContactForm = () => {
             </div>
             <label className="label">Wpisz swoją wiadomość</label>
             <textarea {...register("message", {required: true, min: 120})} placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
-            <p className="errorsMsg">{errors.msg?.message}</p>
+            <p className="errorsMsg">{errors.message?.message}</p>
             <button type="submit" className="contact__btn">Wyślij</button>
         </form>
     );

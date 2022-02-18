@@ -2,9 +2,18 @@
   height: 624px;
   margin-top: 55px;
   margin-bottom: 70px;
+  @media (max-width: 1000px) {
+    margin-top: 30px;
+  }
+  @media (max-width: 1000px) {
+    height: 450px;
+  }
   .simpleSteps__title {
     font-size: 2.375rem;
     text-align: center;
+    @media (max-width: 1000px) {
+      font-size: 1.6rem;
+    }
   }
   .decoration {
     @include decorationLine;
@@ -19,6 +28,9 @@
     height: 325px;
     background-color: $color-white;
     margin-bottom: 35px;
+    @media (max-width: 1000px) {
+      height: 250px;
+    }
     .steps__item {
       display: flex;
       flex-direction: column;
@@ -29,12 +41,22 @@
         width: 83px;
         height: 83px;
         margin-bottom: 14px;
+        @media (max-width: 1000px) {
+          width: 50%;
+        }
       }
       .item__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 1.125rem;
         margin-bottom: 5px;
         text-align: center;
         line-height: 1.3rem;
+        min-width: 130px;
+        @media (max-width: 1000px) {
+          font-size: 0.95rem;
+        }
       }
       hr {
         width: 80px;
@@ -43,6 +65,10 @@
         font-size: 1rem;
         text-align: center;
         line-height: 1.2rem;
+        min-width: 110px;
+        @media (max-width: 1000px) {
+          font-size: 0.8rem;
+        }
       }
     }
   }

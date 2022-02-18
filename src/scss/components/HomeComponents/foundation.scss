@@ -1,10 +1,17 @@
 .foundation {
   height: 800px;
   margin-top: 70px;
+  @media (max-width: 1000px) {
+    height: 650px;
+    margin-top: 35px;
+  }
   .foundation__title {
     font-size: 2.375rem;
     text-align: center;
     margin-bottom: 25px;
+    @media (max-width: 1000px) {
+      font-size: 1.6rem;
+    }
   }
   .decoration {
     @include decorationLine;
@@ -13,9 +20,13 @@
   }
   .foundation__choice {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     font-size: 1.5rem;
     margin: 40px 280px 70px 280px;
+    @media (max-width: 1000px) {
+      font-size: 1.2rem;
+      margin: 20px 140px 35px 140px;
+    }
     .choice {
       display: flex;
       justify-content: center;
@@ -23,6 +34,7 @@
       text-align: center;
       width: 220px;
       height: 80px;
+      padding: 20px;
       border: 1px solid transparent;
       cursor: pointer;
       &:hover {
@@ -42,6 +54,9 @@
       width: 640px;
       margin-bottom: 65px;
       text-align: center;
+      @media (max-width: 1000px) {
+        font-size: 1.1rem;
+      }
     }
     .text-box {
       display: flex;
@@ -61,14 +76,27 @@
         .left__title {
           font-size: 1.625rem;
           margin-bottom: 5px;
+          @media (max-width: 1000px) {
+            font-size: 1.2rem;
+          }
         }
         .left__desc {
           font-size: 1.125rem;
+          margin-right: 20px;
+          @media (max-width: 1000px) {
+            font-size: 0.9rem;
+          }
         }
       }
       .box-right {
         .right__desc {
+          min-width: 410px;
           font-size: 1.125rem;
+          text-align: right;
+          @media (max-width: 1000px) {
+            font-size: 0.9rem;
+            min-width: auto;
+          }
         }
       }
     }
@@ -104,6 +132,13 @@
         justify-content: center;
         align-items: center;
       }
+      @media (max-width: 1000px) {
+        font-size: 0.9rem;
+      }
     }
   }
+}
+
+@media screen and (max-width: 1100px) {
+
 }

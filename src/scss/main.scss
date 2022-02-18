@@ -3,12 +3,13 @@
 @import "./settings/colors";
 @import "./settings/mixins";
 @import "components/home";
-@import "components/header";
+@import "components/HomeComponents/header";
 @import "components/HomeComponents/threeColumns";
 @import "components/HomeComponents/simpleSteps";
 @import "components/HomeComponents/aboutUs";
 @import "components/HomeComponents/foundation";
 @import "components/HomeComponents/contact";
+@import "components/HomeComponents/footer";
 @import "components/LoginComponents/login";
 @import "components/LoginComponents/register";
 @import "components/LoginComponents/logout";
