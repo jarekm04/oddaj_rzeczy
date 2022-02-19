@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 const Location = ({showSelect, setShowSelect, handleShowSelect, register, watch, getValues, handleMoveForward, moveForward, handleMoveBackward}) => {
     const cities = ["Poznań", "Warszawa", "Kraków", "Wrocław", "Katowice"];

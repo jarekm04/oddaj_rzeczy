@@ -10,6 +10,7 @@ import Address from "./StepForm/Address";
 import Review from "./StepForm/Review";
 import Submit from "./StepForm/Submit";
 import BearBg from "../../assets/Background-Form-mini.jpg";
+import {logDOM} from "@testing-library/react";
 
 const steps = [
     {id: 'checkboxes'},
@@ -20,16 +21,11 @@ const steps = [
     {id: 'submit'}
 ];
 
-const schemaMainForm = yup.object().shape({
-    stuff: yup.string().required("Zaznacz jakie rzeczy masz do oddania")
-});
 
 const SendStuffForm = () => {
     const [showSelect, setShowSelect] = useState(false);
     const [moveForward, setMoveForward] = useState(true);
-    const { register, handleSubmit, watch, getValues, formState: { errors } } = useForm({
-        resolver: yupResolver(schemaMainForm)
-    });
+    const { register, handleSubmit, watch, getValues, formState: { errors } } = useForm();
 
     const handleShowSelect = () => {
         !showSelect ? setShowSelect(true) : setShowSelect(false);
@@ -38,6 +34,8 @@ const SendStuffForm = () => {
     const handleMoveForward = (item) => {
         if (Array.isArray(item)) {
             const checkEveryItem =  item.every((el) => getValues(el));
+            getValues("postCode").includes('-') && getValues("postCode").length === 6 ? console.log("jest") : console.log("nie ma");
+            getValues("phone").length === 9 ? console.log("jest tel") : console.log("nie ma tel");
             if (checkEveryItem) {
                 navigation.next();
                 setMoveForward(true);
@@ -45,7 +43,6 @@ const SendStuffForm = () => {
             else {
                 setMoveForward(false);
             }
-            console.log("Tutaj jest tablica")
         } else {
             if (!getValues(item)) {
                 setMoveForward(false);
@@ -64,11 +61,10 @@ const SendStuffForm = () => {
     });
 
     const onSubmit = data => {
-        console.log(data, "data");
+        console.log(data);
     };
-    console.log(errors);
 
-    const props = { showSelect, setShowSelect, handleShowSelect, register, watch, getValues, navigation, moveForward, handleMoveForward, handleMoveBackward };
+    const props = { showSelect, setShowSelect, handleShowSelect, register, watch, getValues, navigation, moveForward, errors, handleMoveForward, handleMoveBackward };
 
     const renderSwitch = () => {
         switch (step.id) {

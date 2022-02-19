@@ -2,7 +2,7 @@ import React from 'react';
 import icon1 from '../../../assets/Icon-1.svg';
 import icon4 from '../../../assets/Icon-4.svg';
 
-const Review = ({getValues, moveForward, handleMoveForward, handleMoveBackward}) => {
+const Review = ({getValues, moveForward, handleMoveForward, handleMoveBackward, navigation}) => {
     const bags = getValues("bags");
     const stuff = getValues("stuff");
     const helpgroups = getValues("helpgroups");
@@ -15,7 +15,6 @@ const Review = ({getValues, moveForward, handleMoveForward, handleMoveBackward})
     const date = getValues("date");
     const time = getValues("time");
     const note = getValues("note");
-
 
     return (
         <>
@@ -32,7 +31,7 @@ const Review = ({getValues, moveForward, handleMoveForward, handleMoveBackward})
                         </div>
                         <div className="gift__item">
                             <img src={icon4} alt="recycling"/>
-                            <p className="icon-text">{`dla lokalizacji: ${localization}`}</p>
+                            <p className="icon-text">{`dla lokalizacji: ${localization? localization : "brak"}`}</p>
                         </div>
                     </section>
                     <section className="userDetails">

@@ -25,7 +25,7 @@ const Address = ({register, moveForward, handleMoveBackward, handleMoveForward})
                         </div>
                         <div className="data__box">
                             <label htmlFor="postCode">Kod pocztowy</label>
-                            <input type="text" id="postCode" {...register("postCode", {required: true, pattern: "{2}-{3}"})} className={!moveForward ? "error" : null}/>
+                            <input type="text" id="postCode" pattern="^\d{5}(?:[-\s]\d{4})?$" {...register("postCode", {required: true, pattern: "{2}-{3}"})} className={!moveForward ? "error" : null}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="phone">Telefon</label>
