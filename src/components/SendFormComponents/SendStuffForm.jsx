@@ -10,7 +10,6 @@ import Address from "./StepForm/Address";
 import Review from "./StepForm/Review";
 import Submit from "./StepForm/Submit";
 import BearBg from "../../assets/Background-Form-mini.jpg";
-import {logDOM} from "@testing-library/react";
 
 const steps = [
     {id: 'checkboxes'},
@@ -34,19 +33,26 @@ const SendStuffForm = () => {
     const handleMoveForward = (item) => {
         if (Array.isArray(item)) {
             const checkEveryItem =  item.every((el) => getValues(el));
-            getValues("postCode").includes('-') && getValues("postCode").length === 6 ? console.log("jest") : console.log("nie ma");
-            getValues("phone").length === 9 ? console.log("jest tel") : console.log("nie ma tel");
             if (checkEveryItem) {
-                navigation.next();
-                setMoveForward(true);
+                if (getValues("phone").length === 9 && getValues("postCode").includes('-') && getValues("postCode").length === 6) {
+                    navigation.next();
+                    setMoveForward(true);
+                } else {
+                    setMoveForward(false);
+                }
             }
             else {
                 setMoveForward(false);
             }
         } else {
             if (!getValues(item)) {
+                console.log("Nie zaznaczone")
+                setMoveForward(false);
+            } else if (getValues("helpgroups") && getValues("helpgroups").length === 0) {
                 setMoveForward(false);
             } else {
+                console.log("Zaznaczone")
+                console.log(getValues(item))
                 navigation.next();
                 setMoveForward(true);
             }
