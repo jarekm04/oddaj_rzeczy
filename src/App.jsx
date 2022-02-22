@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Home from "./components/Home";
+import HomeMain from "./components/HomeComponents/HomeMain";
 import Login from "./components/LoginComponents/Login";
 import Register from "./components/LoginComponents/Register";
 import Logout from "./components/LoginComponents/Logout";
@@ -23,7 +23,7 @@ function App() {
       <Router>
         <Header isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged} />
         <Routes>
-          <Route path="/" element={<Home isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged}/>} />
+          <Route path="/" element={<HomeMain isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged}/>} />
           <Route path="/logowanie" element={<Login setIsUserLogged={setIsUserLogged} userEmail={values.userEmail} userPassword={values.userPassword} />} />
           <Route path="/rejestracja" element={<Register setIsUserLogged={setIsUserLogged} registerEmail={values.registerEmail} registerPassword={values.registerPassword} registerConfirmPassword={values.registerConfirmPassword} />} />
           <Route path="/wylogowano" element={<Logout />} />
