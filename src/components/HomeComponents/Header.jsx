@@ -12,6 +12,8 @@ import {FaCompressArrowsAlt} from "@react-icons/all-files/fa/FaCompressArrowsAlt
 import {TiInfoLargeOutline} from "@react-icons/all-files/ti/TiInfoLargeOutline";
 import {FiLogIn} from "@react-icons/all-files/fi/FiLogIn";
 import {BsPencilSquare} from "@react-icons/all-files/bs/BsPencilSquare";
+import {FiLogOut} from "@react-icons/all-files/fi/FiLogOut";
+import {FaHandHoldingHeart} from "@react-icons/all-files/fa/FaHandHoldingHeart";
 
 const Header = ({isUserLogged, setIsUserLogged}) => {
     const [sidebar, setSidebar] = useState(false);
@@ -64,10 +66,17 @@ const Header = ({isUserLogged, setIsUserLogged}) => {
                             i organizacje</LinkScroll>
                         <LinkScroll to="contactID" smooth={true} duration={500} className="menu__btn" onClick={showSidebar}><MdQuestionAnswer/>Kontakt</LinkScroll>
                     </section>
-                    <section className="mobileMenu__loginArea">
-                        <Link to="/logowanie" className="loginArea__btn" onClick={showSidebar}><FiLogIn/>Zaloguj</Link>
-                        <Link to="/rejestracja" className="loginArea__btn" onClick={showSidebar}><BsPencilSquare/>Załóż konto</Link>
-                    </section>
+                    {isUserLogged ? (
+                        <section className="mobileMenu__loginArea">
+                            <Link to="/oddaj-rzeczy" className="give__btn"><FaHandHoldingHeart/>Oddaj rzeczy</Link>
+                            <Link onClick={handleSignOut} to="/wylogowano" className="loginArea__btn"><FiLogOut/>Wyloguj</Link>
+                        </section>
+                    ) : (
+                        <section className="mobileMenu__loginArea">
+                            <Link to="/logowanie" className="loginArea__btn" onClick={showSidebar}><FiLogIn/>Zaloguj</Link>
+                            <Link to="/rejestracja" className="loginArea__btn" onClick={showSidebar}><BsPencilSquare/>Załóż konto</Link>
+                        </section>
+                    )}
                 </nav>
             </header>
         </>
