@@ -12,7 +12,7 @@ import decoration from "../../assets/Decoration.svg";
 const HomeMain = () => {
     return (
         <>
-            <div className="welcome">
+            <div className="welcome" id="welcomeID">
                 <div className="bg-box">
                     <img className="welcome__bg" src={welcomeBg} alt="stuff"/>
                 </div>

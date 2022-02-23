@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import HomeMain from "./components/HomeComponents/HomeMain";
 import Login from "./components/LoginComponents/Login";
@@ -6,6 +6,7 @@ import Register from "./components/LoginComponents/Register";
 import Logout from "./components/LoginComponents/Logout";
 import GiveStuff from "./components/SendFormComponents/GiveStuff";
 import Header from "./components/HomeComponents/Header";
+import {auth} from "./firebase";
 
 function App() {
   const [isUserLogged, setIsUserLogged] = useState(false);
@@ -17,6 +18,14 @@ function App() {
     registerPassword: '',
     registerConfirmPassword: ''
   })
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setIsUserLogged(true);
+      }
+    });
+  }, []);
 
   return (
     <>
