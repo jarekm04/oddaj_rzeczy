@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import decoration from "../../assets/Decoration.svg";
 import {Link} from "react-router-dom";
 import * as yup from "yup";
@@ -41,6 +41,13 @@ const Register = ({setIsUserLogged, registerEmail, registerPassword, registerCon
             .catch((err) => alert(err.message));
     }
     // console.log(errors);
+    useEffect(() => {
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                navigate("/oddaj-rzeczy");
+            }
+        });
+    }, []);
 
     return (
         <section className="register-box">

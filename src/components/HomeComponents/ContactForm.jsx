@@ -18,7 +18,7 @@ const ContactForm = () => {
     const [isFormSent, setIsFormSent] = useState(false);
 
     const onSubmit = (formData) => {
-        console.log(formData);
+        // console.log(formData);
         setIsFormSent(true);
 
         axios.post('https://fer-api.coderslab.pl/v1/portfolio/contact', formData)
@@ -34,7 +34,7 @@ const ContactForm = () => {
             reset();
         }, 5000);
     }
-    console.log(errors);
+    // console.log(errors);
 
     return (
         <form className="form" onSubmit={handleSubmit(onSubmit)}>

@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import welcomeBg from "../../assets/Home-Hero-Image.jpg";
-import decoration from "../../assets/Decoration.svg";
 import ThreeColumns from "./ThreeColumns";
 import SimpleSteps from "./SimpleSteps";
 import AboutUs from "./AboutUs";
 import Foundation from "./Foundation";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import welcomeBg from "../../assets/Home-Hero-Image.jpg";
+import decoration from "../../assets/Decoration.svg";
 
 const HomeMain = () => {
     return (

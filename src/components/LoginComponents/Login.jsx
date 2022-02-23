@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import decoration from "../../assets/Decoration.svg";
 import {Link, useNavigate} from "react-router-dom";
 import * as yup from "yup";
@@ -34,6 +34,14 @@ const Login = ({setIsUserLogged, userEmail, userPassword}) => {
             }).catch((err) =>
             alert(err.message));
     }
+
+    useEffect(() => {
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                navigate("/oddaj-rzeczy");
+            }
+        });
+    }, []);
 
     return (
         <section className="login-box">
