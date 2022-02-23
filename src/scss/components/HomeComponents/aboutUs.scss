@@ -10,8 +10,8 @@
   @media (max-width: 800px) {
     height: 500px;
   }
-  @media (max-width: 750px) {
-    display: none;
+  @media (min-width: 350px) and (max-width: 750px) {
+    flex-direction: column-reverse;
   }
   .aboutUs__contentBox {
     display: flex;
@@ -29,6 +29,10 @@
     @media (max-width: 1000px) {
       padding-left: 15px;
       padding-right: 15px;
+    }
+    @media (min-width: 350px) and (max-width: 750px) {
+      width: 100%;
+      height: 330px;
     }
     .aboutUs__title {
       font-size: 2.375rem;
@@ -58,6 +62,10 @@
       @media (max-width: 1000px) {
         font-size: 1.2rem;
       }
+      @media (min-width: 350px) and (max-width: 750px) {
+        font-size: 1rem;
+        line-height: 2rem;
+      }
     }
     .signature {
       width: 210px;
@@ -65,6 +73,9 @@
       align-self: flex-end;
       @media (max-width: 1000px) {
         width: 130px;
+      }
+      @media (min-width: 350px) and (max-width: 750px) {
+        width: 80px;
       }
     }
   }
@@ -75,6 +86,10 @@
       height: 100%;
       object-fit: cover;
       object-position: 40%;
+    }
+    @media (max-width: 750px) {
+      width: 100%;
+      max-height: 320px;
     }
   }
 }

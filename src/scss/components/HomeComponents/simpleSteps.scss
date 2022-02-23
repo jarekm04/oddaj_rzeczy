@@ -6,10 +6,8 @@
     margin-top: 30px;
   }
   @media (max-width: 1000px) {
-    height: 450px;
-  }
-  @media (max-width: 750px) {
-    display: none;
+    height: 600px;
+    overflow: hidden;
   }
   .simpleSteps__title {
     font-size: 2.375rem;
@@ -34,12 +32,19 @@
     @media (max-width: 1000px) {
       height: 250px;
     }
+    @media (min-width: 350px) and (max-width: 750px) {
+      flex-wrap: wrap;
+      height: 400px;
+    }
     .steps__item {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       width: 10%;
+      @media (min-width: 350px) and (max-width: 750px) {
+        width: 40%;
+      }
       .item__icon {
         width: 83px;
         height: 83px;
@@ -79,5 +84,8 @@
     @include giveBtn;
     margin-left: 50%;
     transform: translateX(-50%);
+    @media (max-width: 750px) {
+      display: none;
+    }
   }
 }
