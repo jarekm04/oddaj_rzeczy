@@ -8,6 +8,9 @@
     margin-top: -20px;
     margin-bottom: 40px;
   }
+  @media (max-width: 750px) {
+    display: none;
+  }
   .footer__text {
     font-size: 1.125rem;
     @media (max-width: 1000px) {

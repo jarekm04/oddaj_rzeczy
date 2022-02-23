@@ -5,6 +5,9 @@
     height: 650px;
     margin-top: 35px;
   }
+  @media (max-width: 750px) {
+    display: none;
+  }
   .foundation__title {
     font-size: 2.375rem;
     text-align: center;

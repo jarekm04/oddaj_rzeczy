@@ -7,6 +7,9 @@
   @media (max-width: 1000px) {
     height: 220px;
   }
+  @media (max-width: 750px) {
+    display: none;
+  }
   .stats {
     width: 390px;
     height: 252px;

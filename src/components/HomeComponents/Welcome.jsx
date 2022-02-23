@@ -9,10 +9,10 @@ import Footer from "./Footer";
 import welcomeBg from "../../assets/Home-Hero-Image.jpg";
 import decoration from "../../assets/Decoration.svg";
 
-const HomeMain = () => {
+const Welcome = () => {
     return (
         <>
-            <div className="welcome" id="welcomeID">
+            <section className="welcome" id="welcomeID">
                 <div className="bg-box">
                     <img className="welcome__bg" src={welcomeBg} alt="stuff"/>
                 </div>
@@ -26,7 +26,7 @@ const HomeMain = () => {
                         </div>
                     </main>
                 </section>
-            </div>
+            </section>
             <ThreeColumns />
             <SimpleSteps />
             <AboutUs />
@@ -37,4 +37,4 @@ const HomeMain = () => {
     );
 };
 
-export default HomeMain;
+export default Welcome;

@@ -10,6 +10,9 @@
   @media (max-width: 800px) {
     height: 500px;
   }
+  @media (max-width: 750px) {
+    display: none;
+  }
   .aboutUs__contentBox {
     display: flex;
     flex-direction: column;
