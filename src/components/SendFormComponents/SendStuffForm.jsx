@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {useStep} from "react-hooks-helper";
 import {useForm} from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import {dbFireStore} from "../../firebase";
+import {addDoc, collection} from "firebase/firestore"
 import Checkboxes from "./StepForm/Checkboxes";
 import Select from "./StepForm/Select";
 import Location from "./StepForm/Location";
@@ -46,13 +46,10 @@ const SendStuffForm = () => {
             }
         } else {
             if (!getValues(item)) {
-                console.log("Nie zaznaczone")
                 setMoveForward(false);
             } else if (getValues("helpgroups") && getValues("helpgroups").length === 0) {
                 setMoveForward(false);
             } else {
-                console.log("Zaznaczone")
-                console.log(getValues(item))
                 navigation.next();
                 setMoveForward(true);
             }
@@ -68,6 +65,8 @@ const SendStuffForm = () => {
 
     const onSubmit = data => {
         console.log(data);
+        addDoc(collection(dbFireStore, "SendStuffForm"), data); //sending sendStuffForm to Firestore DB
+        navigation.next();
     };
 
     const props = { showSelect, setShowSelect, handleShowSelect, register, watch, getValues, navigation, moveForward, errors, handleMoveForward, handleMoveBackward };

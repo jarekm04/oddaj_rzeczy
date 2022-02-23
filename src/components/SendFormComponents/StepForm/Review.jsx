@@ -2,7 +2,7 @@ import React from 'react';
 import icon1 from '../../../assets/Icon-1.svg';
 import icon4 from '../../../assets/Icon-4.svg';
 
-const Review = ({getValues, moveForward, handleMoveForward, handleMoveBackward, navigation}) => {
+const Review = ({getValues, handleMoveBackward}) => {
     const bags = getValues("bags");
     const stuff = getValues("stuff");
     const helpgroups = getValues("helpgroups");

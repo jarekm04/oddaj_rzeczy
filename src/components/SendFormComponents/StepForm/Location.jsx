@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Location = ({showSelect, setShowSelect, handleShowSelect, register, watch, getValues, handleMoveForward, moveForward, handleMoveBackward}) => {
+const Location = ({showSelect, handleShowSelect, register, watch, getValues, handleMoveForward, moveForward, handleMoveBackward}) => {
     const cities = ["Poznań", "Warszawa", "Kraków", "Wrocław", "Katowice"];
     const helpgroups = ["dzieciom", "samotnym matkom", "bezdomnym", "niepełnosprawnym", "osobom starszym"];
     const optionalInput = watch('localizationSpecific');

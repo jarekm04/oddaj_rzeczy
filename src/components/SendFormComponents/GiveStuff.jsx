@@ -1,10 +1,22 @@
-import React from 'react';
-import giveStuffBg from "../../assets/Form-Hero-Image.jpg";
-import decoration from "../../assets/Decoration.svg";
+import React, {useEffect} from 'react';
+import {useNavigate} from "react-router-dom";
+import {auth} from "../../firebase";
 import SendStuffForm from "./SendStuffForm";
-// import Contact from "./HomeComponents/Contact";
+import Contact from "../HomeComponents/Contact";
+import decoration from "../../assets/Decoration.svg";
+import giveStuffBg from "../../assets/Form-Hero-Image.jpg";
 
 const GiveStuff = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => { //opcja, żeby niezalogowany użytkownik nie mógł się dostać do zalogowanych komponentów
+        auth.onAuthStateChanged((user) => {
+            if (!user) {
+                navigate("/");
+            }
+        });
+    }, []);
+
     return (
         <>
             <section className="giveStuff">
@@ -26,7 +38,7 @@ const GiveStuff = () => {
                 </section>
             </section>
             <SendStuffForm/>
-            {/*<Contact />*/}
+            <Contact />
         </>
     );
 };
