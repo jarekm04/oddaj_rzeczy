@@ -4,6 +4,10 @@
   width: 100%;
   height: 802px;
   background-color: #eeedeb;
+  position: relative;
+  @media (max-width: 1000px) {
+    height: 700px;
+  }
   .sendStuffForm__warn {
     display: flex;
     flex-direction: column;
@@ -13,14 +17,33 @@
     width: 100%;
     height: 140px;
     background-color: #FAD648;
+    @media (max-width: 750px) {
+      padding: 0;
+      height: 100px;
+    }
     .warn__title {
       font-size: 2.375rem;
       font-weight: bold;
       color: black;
+      @media (max-width: 950px) {
+        font-size: 1.7rem;
+      }
+      @media (max-width: 750px) {
+        font-size: 1.5rem;
+        text-align: center;
+      }
     }
     .warn__subtitle {
       font-size: 1.375rem;
       line-height: 1.7rem;
+      @media (max-width: 950px) {
+        font-size: 1.2rem;
+      }
+      @media (max-width: 750px) {
+        font-size: 1rem;
+        line-height: 1.2rem;
+        text-align: center;
+      }
       a {
         color: $color-darkGray;
         text-decoration: none;
@@ -34,25 +57,49 @@
     width: 60%;
     height: 665px;
     padding-left: 50px;
+
     .form__step {
       font-size: 1.5rem;
       font-weight: lighter;
       margin-top: 30px;
       margin-bottom: 40px;
+      @media (max-width: 1000px) {
+        font-size: 1.2rem;
+      }
     }
     .form__title {
       font-size: 2.25rem;
       font-weight: bold;
       margin-bottom: 30px;
+      @media (max-width: 1000px) {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
     }
   }
   .sendStuffForm__bearBg {
-    width: 40%;
-    max-height: 665px;
+    position: absolute;
+    max-width: 600px;
+    top: 20%;
+    left: 60%;
+    @media (max-width: 1235px) {
+      top: 51%;
+      left: 74%;
+      max-width: 250px;
+    }
+    @media (max-width: 950px) {
+      max-width: 220px;
+    }
+    @media (max-width: 850px) {
+      display: none;
+    }
   }
   .sendStuffForm__buttons {
     display: flex;
     margin-top: 50px;
+    @media (max-width: 1000px) {
+      margin-top: 20px;
+    }
     .sendStuffForm__btn {
       display: flex;
       justify-content: center;
@@ -67,6 +114,11 @@
       transition: .2s ease-in;
       margin-right: 40px;
       margin-bottom: 30px;
+      @media (max-width: 1000px) {
+        font-size: 1.1rem;
+        width: 150px;
+        height: 50px;
+      }
       &:hover {
         background-color: $color-gray;
       }
@@ -75,6 +127,9 @@
   .errorsMsg {
     font-size: 1.2rem;
     color: crimson;
+    @media (max-width: 750px) {
+      font-size: 0.9rem;
+    }
   }
   .error {
     border: 1px solid crimson !important;

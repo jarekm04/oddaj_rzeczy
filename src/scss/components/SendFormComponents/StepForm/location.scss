@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  @media (max-width: 1000px) {
+    height: 300px;
+  }
   .box {
     display: flex;
     align-items: center;
@@ -15,6 +18,11 @@
     margin-bottom: 5px;
     cursor: pointer;
     border: 1px solid $color-darkGray;
+    @media (max-width: 1000px) {
+      width: 270px;
+      min-height: 38px;
+      font-size: 1.1rem;
+    }
     &:after {
       content: url("../../../../assets/Icon-Arrow-Down.svg");
       position: absolute;
@@ -38,6 +46,10 @@
     appearance: none;
     overflow: auto;
     cursor: pointer;
+    @media (max-width: 1000px) {
+      font-size: 1.1rem;
+      width: 270px;
+    }
     option {
       background-color: #eeedeb;
       &:hover {
@@ -57,6 +69,10 @@
     .helpgroups__title {
       @include formH2Subtitle;
       margin-top: 10px;
+      @media (max-width: 1000px) {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
     }
     .helpgroups__squares {
       display: flex;
@@ -78,6 +94,9 @@
           border: 1px solid $color-darkGray;
           color: #000;
           margin-bottom: 10px;
+          @media (max-width: 1000px) {
+            font-size: 0.8rem;
+          }
         }
 
         input[type="checkbox"]:checked + label {
@@ -89,14 +108,24 @@
   }
   .organisation {
     margin-top: 20px;
+    @media (max-width: 1000px) {
+      margin-top: 0;
+    }
     .organisation__title {
       @include formH2Subtitle;
+      @media (max-width: 1000px) {
+        font-size: 1.1rem;
+      }
     }
     input[type="text"] {
       font-size: 1.5rem;
       width: 90%;
       background-color: transparent;
       color: $color-darkGray;
+      @media (max-width: 1000px) {
+        font-size: 1.2rem;
+        width: 80%;
+      }
     }
   }
 }
