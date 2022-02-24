@@ -9,18 +9,27 @@
     margin-bottom: 40px;
   }
   @media (max-width: 750px) {
-    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0;
+    margin-bottom: 20px;
   }
   .footer__text {
     font-size: 1.125rem;
     @media (max-width: 1000px) {
       font-size: 1rem;
     }
+    @media (max-width: 750px) {
+      margin-left: 15px;
+    }
   }
   .footer__media {
     align-self: flex-end;
     margin-top: -30px;
     margin-right: 90px;
+    @media (max-width: 750px) {
+      margin-right: 0;
+    }
     img {
       margin-right: 20px;
       cursor: pointer;
