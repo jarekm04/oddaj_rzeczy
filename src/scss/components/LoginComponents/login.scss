@@ -6,10 +6,20 @@
   .login__title {
     font-size: 2.5rem;
     margin-bottom: 25px;
+    @media (max-width: 750px) {
+      font-size: 1.7rem;
+      margin-top: 12%;
+    }
+    @media (min-width: 350px) and (max-width: 550px) {
+      margin-top: 18%;
+    }
   }
   .decoration {
     @include decorationLine;
     margin-bottom: 60px;
+    @media (min-width: 350px) and (max-width: 750px) {
+      margin-bottom: 20px;
+    }
   }
   form {
     display: flex;
@@ -25,11 +35,18 @@
     width: 385px;
     height: 235px;
     background-color: $color-white;
+    @media (min-width: 350px) and (max-width: 750px) {
+      width: 230px;
+      height: 180px;
+    }
     .label {
       padding-bottom: 10px;
       font-size: 1rem;
       font-weight: bold;
       margin-right: 150px;
+      @media (min-width: 350px) and (max-width: 750px) {
+        font-size: 0.8rem;
+      }
     }
     input {
       font-size: 1rem;
@@ -38,6 +55,10 @@
       border: none;
       border-bottom: 1px solid $color-darkGray;
       line-height: 1.5rem;
+      @media (min-width: 350px) and (max-width: 750px) {
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+      }
     }
     .errorMsg {
       font-size: 0.8rem;
@@ -51,6 +72,9 @@
     justify-content: space-between;
     width: 500px;
     margin-top: 40px;
+    @media (min-width: 350px) and (max-width: 750px) {
+      width: 300px;
+    }
     .register__btn {
       display: flex;
       justify-content: center;
@@ -60,6 +84,11 @@
       font-size: 1.125rem;
       color: $color-darkGray;
       text-decoration: none;
+      @media (min-width: 350px) and (max-width: 750px) {
+        width: 90px;
+        height: 40px;
+        font-size: 0.9rem;
+      }
       &:hover {
         text-decoration: underline;
       }
@@ -72,6 +101,11 @@
       border: 1px solid $color-darkGray;
       color: $color-darkGray;
       cursor: pointer;
+      @media (min-width: 350px) and (max-width: 750px) {
+        width: 90px;
+        height: 40px;
+        font-size: 0.9rem;
+      }
       &:hover {
         background-color: $color-white;
       }
