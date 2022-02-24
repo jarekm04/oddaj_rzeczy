@@ -6,14 +6,44 @@
     height: calc(100% + 107px);
     margin-top: -107px;
     z-index: -2;
+    @media (max-width: 1250px) {
+      width: 40%;
+    }
+    @media (max-width: 1200px) {
+      width: 30%;
+    }
+    @media (max-width: 950px) {
+      width: 25%;
+    }
+    @media (max-width: 850px) {
+      display: none;
+    }
     .giveStuff__bg {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      @media (max-width: 1250px) {
+        object-position: 60%;
+      }
+      @media (max-width: 1200px) {
+        object-position: 75%;
+      }
     }
   }
   .giveStuff__content {
     width: 55%;
+    @media (max-width: 1250px) {
+      width: 60%;
+    }
+    @media (max-width: 1200px) {
+      width: 70%;
+    }
+    @media (max-width: 1200px) {
+      width: 75%;
+    }
+    @media (max-width: 850px) {
+      width: 100%;
+    }
     .main__content {
       display: flex;
       flex-direction: column;

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import {Link as LinkScroll} from "react-scroll";
+import {animateScroll as scroll} from 'react-scroll';
 import {auth} from "../../firebase";
 import {signOut} from "firebase/auth";
 import {GiHamburgerMenu} from "react-icons/gi";
@@ -58,17 +59,17 @@ const Header = ({isUserLogged, setIsUserLogged}) => {
                 {isUserLogged ? <p className="userName">Cześć {localStorage.getItem("userName")}</p> : null}
                 <nav className={sidebar? "header__mobileMenu active" : "header__mobileMenu"}>
                     <section className="mobileMenu__items">
-                        <LinkScroll to="welcomeID" smooth={true} duration={500} offset={-55} className="menu__btn" onClick={showSidebar}><FaCompressArrowsAlt/>Start</LinkScroll>
-                        <LinkScroll to="simpleStepsID" smooth={true} duration={500} offset={-55} className="menu__btn" onClick={showSidebar}><BsFillPatchQuestionFill/>O co
+                        <Link to="/" className="menu__btn" onClick={() => {showSidebar(); scroll.scrollToTop()}}><FaCompressArrowsAlt/>Start</Link>
+                        <LinkScroll to="simpleStepsID" smooth={true} duration={500} offset={-100} className="menu__btn" onClick={showSidebar}><BsFillPatchQuestionFill/>O co
                             chodzi?</LinkScroll>
-                        <LinkScroll to="aboutUsID" smooth={true} duration={500} className="menu__btn" onClick={showSidebar}><TiInfoLargeOutline/>O nas</LinkScroll>
-                        <LinkScroll to="foundationID" smooth={true} duration={500} offset={-70} className="menu__btn" onClick={showSidebar}><GiOrganigram/>Fundacja
+                        <LinkScroll to="aboutUsID" smooth={true} duration={500} offset={-220} className="menu__btn" onClick={showSidebar}><TiInfoLargeOutline/>O nas</LinkScroll>
+                        <LinkScroll to="foundationID" smooth={true} duration={500} offset={-90} className="menu__btn" onClick={showSidebar}><GiOrganigram/>Fundacja
                             i organizacje</LinkScroll>
                         <LinkScroll to="contactID" smooth={true} duration={500} className="menu__btn" onClick={showSidebar}><MdQuestionAnswer/>Kontakt</LinkScroll>
                     </section>
                     {isUserLogged ? (
                         <section className="mobileMenu__loginArea">
-                            <Link to="/oddaj-rzeczy" className="give__btn"><FaHandHoldingHeart/>Oddaj rzeczy</Link>
+                            <Link to="/oddaj-rzeczy" className="give__btn" onClick={showSidebar}><FaHandHoldingHeart/>Oddaj rzeczy</Link>
                             <Link onClick={handleSignOut} to="/wylogowano" className="loginArea__btn"><FiLogOut/>Wyloguj</Link>
                         </section>
                     ) : (
