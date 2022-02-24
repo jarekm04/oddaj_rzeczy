@@ -8,12 +8,18 @@
     height: 600px;
     overflow: hidden;
   }
-  @media (max-width: 750px) {
+  @media (min-width: 350px) and (max-width: 750px) {
+    height: 450px;
     display: none;
   }
   .bg-box {
     width: 50%;
     height: 100%;
+    @media (min-width: 350px) and (max-width: 750px) {
+      position: absolute;
+      width: 100%;
+      height: auto;
+    }
     .contact__bg {
       width: 100%;
       height: 100%;
@@ -28,6 +34,9 @@
         margin-top: 40%;
         transform: scale(1.7);
       }
+      @media (min-width: 350px) and (max-width: 750px) {
+        opacity: 0.1;
+      }
     }
   }
   .form {
@@ -38,6 +47,10 @@
     margin-right: 70px;
     margin-left: 20px;
     z-index: 2;
+    @media (min-width: 350px) and (max-width: 750px) {
+      width: 100%;
+      margin: 0 20px 0 20px;
+    }
     .form__title {
       font-size: 2.375rem;
       text-align: center;
@@ -50,12 +63,18 @@
         font-size: 1.6rem;
         margin-top: 70px;
       }
+      @media (min-width: 350px) and (max-width: 750px) {
+        margin-top: 40px;
+      }
     }
     .decoration {
       @include decorationLine;
       margin-left: 50%;
       transform: translateX(-50%);
       margin-bottom: 60px;
+      @media (min-width: 350px) and (max-width: 750px) {
+        margin-bottom: 20px;
+      }
     }
     .form__successMsg {
       font-size: 1rem;
@@ -97,6 +116,9 @@
       @media (max-width: 1000px) {
         font-size: 0.8rem;
       }
+      @media (min-width: 350px) and (max-width: 750px) {
+        border-bottom: 1px solid black;
+      }
     }
     textarea {
       height: 100px;
@@ -109,6 +131,9 @@
     input::placeholder,
     textarea::placeholder {
       color: #3C3C3C26;
+      @media (min-width: 350px) and (max-width: 750px) {
+        color: #737373;
+      }
     }
     .contact__btn {
       width: 150px;
@@ -120,6 +145,9 @@
       background-color: white;
       border: 1px solid $color-darkGray;
       cursor: pointer;
+      @media (min-width: 350px) and (max-width: 750px) {
+        margin-top: 30px;
+      }
       &:hover {
         background-color: $color-white;
       }
@@ -134,11 +162,5 @@
       padding-top: 5px;
       color: red;
     }
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .contact {
-
   }
 }
