@@ -72,6 +72,10 @@
             font-size: 1.2rem;
             margin-right: 10px;
           }
+          @media (max-width: 630px) {
+            font-size: 1.1rem;
+            margin-bottom: 15x;
+          }
         }
         .item__name {
           @media (max-width: 630px) {

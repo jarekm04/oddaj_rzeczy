@@ -1,4 +1,5 @@
 import React from 'react';
+import BearBg from "../../../assets/Background-Form-mini.jpg";
 
 const Address = ({register, moveForward, handleMoveBackward, handleMoveForward}) => {
     const userMustHaveData = ["street", "city", "postCode", "phone", "date", "time"];

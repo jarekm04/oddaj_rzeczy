@@ -1,9 +1,10 @@
 .giveStuff {
-  height: calc(100vh - 107px);
+  height: 600px;
+  min-height: 450px;
   display: flex;
   position: relative;
   @media (max-width: 750px) {
-    height: 70vh;
+    height: 60vh;
   }
   .bg-box {
     width: 45%;
@@ -76,6 +77,10 @@
           font-size: 1.6rem;
           line-height: 2.6rem;
         }
+        @media (max-width: 450px) {
+          font-size: 1.3rem;
+          line-height: 2.3rem;
+        }
       }
       .decoration {
         @include decorationLine;
@@ -90,6 +95,9 @@
         @media (max-width: 750px) {
           font-size: 1.6rem;
           margin-bottom: 30px;
+        }
+        @media (max-width: 450px) {
+          font-size: 1.3rem;
         }
       }
       .main__steps {
@@ -111,6 +119,11 @@
             min-height: 100px;
             font-size: 0.9rem;
           }
+          @media (max-width: 450px) {
+            min-width: 77px;
+            min-height: 77px;
+            font-size: 0.8rem;
+          }
           &:before {
             content: '';
             position: absolute;
@@ -123,6 +136,9 @@
             font-size: 2rem;
             @media (max-width: 750px) {
               font-size: 1.5rem;
+            }
+            @media (max-width: 450px) {
+              font-size: 1.2rem;
             }
           }
         }

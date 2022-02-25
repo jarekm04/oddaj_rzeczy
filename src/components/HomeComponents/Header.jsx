@@ -70,7 +70,7 @@ const Header = ({isUserLogged, setIsUserLogged}) => {
                     {isUserLogged ? (
                         <section className="mobileMenu__loginArea">
                             <Link to="/oddaj-rzeczy" className="give__btn" onClick={showSidebar}><FaHandHoldingHeart/>Oddaj rzeczy</Link>
-                            <Link onClick={handleSignOut} to="/wylogowano" className="loginArea__btn"><FiLogOut/>Wyloguj</Link>
+                            <Link onClick={() => {handleSignOut(); showSidebar()}} to="/wylogowano" className="loginArea__btn"><FiLogOut/>Wyloguj</Link>
                         </section>
                     ) : (
                         <section className="mobileMenu__loginArea">
