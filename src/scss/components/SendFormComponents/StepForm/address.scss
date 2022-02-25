@@ -14,12 +14,21 @@
     @media (max-width: 1000px) {
       justify-content: flex-start;
     }
+    @media (max-width: 750px) {
+      width: 300px;
+    }
+    @media (max-width: 600px) {
+      width: 220px;
+    }
     label {
       width: 99px;
       font-size: 1.5rem;
       font-weight: lighter;
       @media (max-width: 1000px) {
         font-size: 1.2rem;
+      }
+      @media (max-width: 600px) {
+        display: none;
       }
     }
     input[type="text"],
@@ -31,6 +40,12 @@
       font-size: 1rem;
       background-color: transparent;
       border: 1px solid $color-darkGray;
+      &::placeholder {
+        color: transparent;
+        @media (max-width: 600px) {
+          color: $color-darkGray;
+        }
+      }
       @media (max-width: 1000px) {
         width: 150px;
         height: 25px;
@@ -51,6 +66,12 @@
       font-size: 1rem;
       background: transparent;
       resize: none;
+      &::placeholder {
+        color: transparent;
+        @media (max-width: 600px) {
+          color: $color-darkGray;
+        }
+      }
       @media (max-width: 1000px) {
         font-size: 0.9rem;
         min-width: auto;

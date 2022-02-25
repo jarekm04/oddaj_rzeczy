@@ -41,6 +41,9 @@
       display: flex;
       justify-content: space-between;
       max-width: 700px;
+      @media (max-width: 630px) {
+        flex-direction: column;
+      }
       .userDetails__address {
         .address__title {
           @include formH2Subtitle;
@@ -68,6 +71,16 @@
           @media (max-width: 1000px) {
             font-size: 1.2rem;
             margin-right: 10px;
+          }
+        }
+        .item__name {
+          @media (max-width: 630px) {
+            width: 250px;
+          }
+        }
+        .item__data {
+          @media (max-width: 630px) {
+            width: 100%;
           }
         }
       }

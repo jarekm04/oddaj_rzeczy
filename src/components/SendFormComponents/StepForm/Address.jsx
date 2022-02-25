@@ -17,19 +17,19 @@ const Address = ({register, moveForward, handleMoveBackward, handleMoveForward})
                         <p className="dataTitle">Adres odbioru:</p>
                         <div className="data__box">
                             <label htmlFor="street">Ulica</label>
-                            <input type="text" id="street" {...register("street", {required: true, min: 2})} className={!moveForward ? "error" : null}/>
+                            <input type="text" id="street" placeholder="Wpisz ulicę" {...register("street", {required: true, min: 2})} className={!moveForward ? "error" : null}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="city">Miasto</label>
-                            <input type="text" id="city" {...register("city", {required: true, min: 2})} className={!moveForward ? "error" : null}/>
+                            <input type="text" id="city" placeholder="Wpisz miasto" {...register("city", {required: true, min: 2})} className={!moveForward ? "error" : null}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="postCode">Kod pocztowy</label>
-                            <input type="text" id="postCode" pattern="^\d{5}(?:[-\s]\d{4})?$" {...register("postCode", {required: true, pattern: "{2}-{3}"})} className={!moveForward ? "error" : null}/>
+                            <input type="text" id="postCode" placeholder="Wpisz kod pocztowy" pattern="^\d{5}(?:[-\s]\d{4})?$" {...register("postCode", {required: true, pattern: "{2}-{3}"})} className={!moveForward ? "error" : null}/>
                         </div>
                         <div className="data__box">
                             <label htmlFor="phone">Telefon</label>
-                            <input type="number" id="phone" {...register("phone", {required: true, minLength: 9, maxLength: 9})} className={!moveForward ? "error" : null}/>
+                            <input type="number" id="phone" placeholder="Wpisz nr telefonu" {...register("phone", {required: true, minLength: 9, maxLength: 9})} className={!moveForward ? "error" : null}/>
                         </div>
                     </div>
                     <div className="timeData">
@@ -44,7 +44,7 @@ const Address = ({register, moveForward, handleMoveBackward, handleMoveForward})
                         </div>
                         <div className="data__box">
                             <label htmlFor="note">Uwagi dla kuriera</label>
-                            <textarea id="note" {...register("note", {})}/>
+                            <textarea id="note" placeholder="Uwagi dla kuriera" {...register("note", {})}/>
                         </div>
                     </div>
                 </div>
