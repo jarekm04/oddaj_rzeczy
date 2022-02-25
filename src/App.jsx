@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {auth} from "./firebase";
+import Header from "./components/HomeComponents/Header";
 import Welcome from "./components/HomeComponents/Welcome";
 import Login from "./components/LoginComponents/Login";
 import Register from "./components/LoginComponents/Register";
 import Logout from "./components/LoginComponents/Logout";
 import GiveStuff from "./components/SendFormComponents/GiveStuff";
-import Header from "./components/HomeComponents/Header";
-import {auth} from "./firebase";
+import Panel from "./components/AdminPanel/Panel";
 
 function App() {
   const [isUserLogged, setIsUserLogged] = useState(false);
@@ -37,6 +38,7 @@ function App() {
           <Route path="/rejestracja" element={<Register setIsUserLogged={setIsUserLogged} registerEmail={values.registerEmail} registerPassword={values.registerPassword} registerConfirmPassword={values.registerConfirmPassword} />} />
           <Route path="/wylogowano" element={<Logout />} />
           <Route path="/oddaj-rzeczy" element={<GiveStuff />} />
+          <Route path="/panel" element={<Panel />} />
         </Routes>
       </Router>
     </>

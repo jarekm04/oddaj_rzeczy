@@ -1,0 +1,26 @@
+.panel {
+  .panel__title {
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 50px;
+    text-align: center;
+    line-height: 100px;
+    background-color: #e5e5e5;
+  }
+  .main {
+    margin-top: 20px;
+    .users {
+      .users__title {
+        font-size: 30px;
+        font-style: italic;
+      }
+    }
+    .organizations {
+      font-size: 30px;
+      font-style: italic;
+    }
+  }
+}
