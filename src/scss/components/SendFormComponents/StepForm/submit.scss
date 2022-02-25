@@ -1,0 +1,29 @@
+.sendStuffForm.submit {
+  justify-content: space-between;
+  .form__submit {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    @media (max-width: 1000px) {
+      width: 100%;
+    }
+    .submit__title {
+      font-size: 2.5rem;
+      line-height: 3rem;
+      font-weight: lighter;
+      margin-bottom: 40px;
+      padding: 20px;
+      @media (max-width: 1000px) {
+        font-size: 1.6rem;
+        line-height: 2.3rem;
+        margin-bottom: 20px;
+      }
+    }
+    img {
+      @include decorationLine;
+    }
+  }
+}

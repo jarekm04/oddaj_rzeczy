@@ -1,0 +1,28 @@
+@import "settings/reset";
+@import "./settings/fonts";
+@import "./settings/colors";
+@import "./settings/mixins";
+@import "components/HomeComponents/welcome";
+@import "components/HomeComponents/header";
+@import "components/HomeComponents/threeColumns";
+@import "components/HomeComponents/simpleSteps";
+@import "components/HomeComponents/aboutUs";
+@import "components/HomeComponents/foundation";
+@import "components/HomeComponents/contact";
+@import "components/HomeComponents/footer";
+@import "components/LoginComponents/login";
+@import "components/LoginComponents/register";
+@import "components/LoginComponents/logout";
+@import "components/SendFormComponents/giveStuff";
+@import "components/SendFormComponents/sendStuffForm";
+@import "components/SendFormComponents/StepForm/checkboxes";
+@import "components/SendFormComponents/StepForm/select";
+@import "components/SendFormComponents/StepForm/location";
+@import "components/SendFormComponents/StepForm/address";
+@import "components/SendFormComponents/StepForm/review";
+@import "components/SendFormComponents/StepForm/submit";
+
+body {
+  font-family: $font-base;
+  color: $color-darkGray
+}

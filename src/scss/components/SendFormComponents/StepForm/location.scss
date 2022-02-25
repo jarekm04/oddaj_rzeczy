@@ -1,0 +1,150 @@
+.form__location {
+  height: 370px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  @media (max-width: 1000px) {
+    height: 300px;
+  }
+  .box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 330px;
+    min-height: 49px;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    padding-left: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border: 1px solid $color-darkGray;
+    @media (max-width: 1000px) {
+      width: 270px;
+      min-height: 38px;
+      font-size: 1.1rem;
+    }
+    @media (max-width: 465px) {
+      width: 220px;
+      font-size: 0.9rem;
+    }
+    &:after {
+      content: url("../../../../assets/Icon-Arrow-Down.svg");
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      color: $color-darkGray;
+      pointer-events: none;
+    }
+  }
+  .select-active {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 300px;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    padding: 5px 10px;
+    color: $color-darkGray;
+    background-color: #eeedeb;
+    appearance: none;
+    overflow: auto;
+    cursor: pointer;
+    @media (max-width: 1000px) {
+      font-size: 1.1rem;
+      width: 270px;
+    }
+    @media (max-width: 465px) {
+      width: 220px;
+      font-size: 0.9rem;
+    }
+    option {
+      background-color: #eeedeb;
+      &:hover {
+        background-color: #989595;
+      }
+    }
+  }
+  .select-none {
+    display: none;
+  }
+  .box.rotateArrow {
+    &:after {
+      transform: rotate(180deg) translateY(50%);
+    }
+  }
+  .helpgroups {
+    .helpgroups__title {
+      @include formH2Subtitle;
+      margin-top: 10px;
+      @media (max-width: 1000px) {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+    }
+    .helpgroups__squares {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      @media (max-width: 465px) {
+        margin-top: 0;
+      }
+      .square {
+        margin-right: 30px;
+        margin-bottom: 15px;
+        @media (max-width: 1000px) {
+          margin-bottom: 10px;
+        }
+        @media (max-width: 465px) {
+          margin-right: 10px;
+          margin-bottom: 5px;
+        }
+        input[type="checkbox"]:not(:checked),
+        input[type="checkbox"]:checked {
+          position: absolute;
+          left: -9999%;
+        }
+
+        input[type="checkbox"] + label {
+          display: inline-block;
+          padding: 10px;
+          cursor: pointer;
+          border: 1px solid $color-darkGray;
+          color: #000;
+          margin-bottom: 10px;
+          @media (max-width: 1000px) {
+            font-size: 0.8rem;
+          }
+        }
+
+        input[type="checkbox"]:checked + label {
+          border: 1px solid $color-darkGray;
+          background-color: $color-yellow;
+        }
+      }
+    }
+  }
+  .organisation {
+    margin-top: 20px;
+    @media (max-width: 1000px) {
+      margin-top: 0;
+    }
+    .organisation__title {
+      @include formH2Subtitle;
+      @media (max-width: 1000px) {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+    }
+    input[type="text"] {
+      font-size: 1.5rem;
+      width: 90%;
+      background-color: transparent;
+      color: $color-darkGray;
+      @media (max-width: 1000px) {
+        font-size: 1.2rem;
+        width: 80%;
+      }
+    }
+  }
+}

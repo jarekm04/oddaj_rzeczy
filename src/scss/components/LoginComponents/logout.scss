@@ -1,0 +1,37 @@
+.logout-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12%;
+  @media (min-width: 350px) and (max-width: 750px) {
+    margin-top: 27%;
+  }
+  .logout__title {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    @media (min-width: 350px) and (max-width: 750px) {
+      font-size: 1.7rem;
+      text-align: center;
+    }
+  }
+  .decoration {
+    @include decorationLine;
+    margin-bottom: 60px;
+  }
+  .logout__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    font-size: 1.125rem;
+    background-color: white;
+    border: 1px solid $color-darkGray;
+    color: $color-darkGray;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+      background-color: $color-white;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.sendStuffForm__form {
+  .form__title.review {
+    margin-top: 40px;
+  }
+  .form__review {
+    .giftSummary {
+      margin-bottom: 40px;
+      @media (max-width: 1000px) {
+        margin-bottom: 20px;
+      }
+      .giftSummary__title {
+        @include formH2Subtitle;
+        @media (max-width: 1000px) {
+          font-size: 1.2rem;
+        }
+      }
+      .gift__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        img {
+          width: 50px;
+          height: 50px;
+          margin-right: 15px;
+          @media (max-width: 1000px) {
+            width: 30px;
+            height: 30px;
+          }
+        }
+        .icon-text {
+          display: inline-block;
+          font-size: 1.5rem;
+          color: #000;
+          @media (max-width: 1000px) {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+    .userDetails {
+      display: flex;
+      justify-content: space-between;
+      max-width: 700px;
+      @media (max-width: 630px) {
+        flex-direction: column;
+      }
+      .userDetails__address {
+        .address__title {
+          @include formH2Subtitle;
+          @media (max-width: 1000px) {
+            font-size: 1.2rem;
+          }
+        }
+      }
+      .userDetails__date {
+        .userDetails__title {
+          @include formH2Subtitle;
+          @media (max-width: 1000px) {
+            font-size: 1.2rem;
+          }
+        }
+      }
+      .item {
+        display: flex;
+        .item__name,
+        .item__data {
+          width: 140px;
+          font-size: 1.5rem;
+          font-weight: lighter;
+          margin-bottom: 20px;
+          @media (max-width: 1000px) {
+            font-size: 1.2rem;
+            margin-right: 10px;
+          }
+          @media (max-width: 630px) {
+            font-size: 1.1rem;
+            margin-bottom: 15x;
+          }
+        }
+        .item__name {
+          @media (max-width: 630px) {
+            width: 250px;
+          }
+        }
+        .item__data {
+          @media (max-width: 630px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

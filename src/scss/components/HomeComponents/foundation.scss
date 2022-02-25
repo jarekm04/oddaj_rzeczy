@@ -1,0 +1,182 @@
+.foundation {
+  height: 800px;
+  margin-top: 70px;
+  @media (max-width: 1000px) {
+    height: 650px;
+    margin-top: 35px;
+  }
+  @media (max-width: 750px) {
+    height: 537px;
+    overflow: hidden;
+  }
+  .foundation__title {
+    font-size: 2.375rem;
+    text-align: center;
+    margin-bottom: 25px;
+    @media (max-width: 1000px) {
+      font-size: 1.6rem;
+    }
+    @media (min-width: 350px) and (max-width: 750px) {
+      margin-bottom: 15px;
+    }
+  }
+  .decoration {
+    @include decorationLine;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    @media (min-width: 350px) and (max-width: 750px) {
+      margin-bottom: 10px;
+    }
+  }
+  .foundation__choice {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 40px 280px 70px 280px;
+    @media (max-width: 1000px) {
+      font-size: 1.2rem;
+      margin: 20px 140px 35px 140px;
+    }
+    @media (min-width: 350px) and (max-width: 750px) {
+      flex-direction: column;
+      align-items: center;
+      font-size: 1rem;
+      margin: 0;
+    }
+    .choice {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 220px;
+      height: 80px;
+      padding: 20px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      &:hover {
+        border: 1px solid $color-darkGray;
+      }
+      @media (min-width: 350px) and (max-width: 750px) {
+        height: 50px;
+      }
+    }
+  }
+  .choice__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    @media (min-width: 350px) and (max-width: 750px) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    .choice__text {
+      font-size: 1.375rem;
+      width: 640px;
+      margin-bottom: 65px;
+      text-align: center;
+      @media (max-width: 1000px) {
+        font-size: 1.1rem;
+      }
+      @media (min-width: 350px) and (max-width: 750px) {
+        display: none;
+      }
+    }
+    .text-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      width: 100%;
+      font-family: $font-alt;
+      font-weight: lighter;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: $color-gray;
+      &:last-of-type {
+        border: none;
+      }
+      .box-left {
+        .left__title {
+          font-size: 1.625rem;
+          margin-bottom: 5px;
+          @media (max-width: 1000px) {
+            font-size: 1.2rem;
+          }
+          @media (min-width: 350px) and (max-width: 750px) {
+            font-size: 0.9rem;
+          }
+        }
+        .left__desc {
+          font-size: 1.125rem;
+          margin-right: 20px;
+          @media (max-width: 1000px) {
+            font-size: 0.9rem;
+          }
+          @media (min-width: 350px) and (max-width: 750px) {
+            font-size: 0.7rem;
+          }
+        }
+      }
+      .box-right {
+        .right__desc {
+          min-width: 410px;
+          font-size: 1.125rem;
+          text-align: right;
+          @media (max-width: 1000px) {
+            font-size: 0.9rem;
+            min-width: auto;
+          }
+          @media (min-width: 350px) and (max-width: 750px) {
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+  }
+  .foundation__numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    @media (min-width: 350px) and (max-width: 750px) {
+      margin-top: 10px;
+    }
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 50px;
+      font-size: 1.125rem;
+      color: $color-darkGray;
+      border: 1px solid transparent;
+      cursor: pointer;
+      margin-left: 10px;
+      &:hover {
+        border: 1px solid $color-gray;
+      }
+      &.previous,
+      &.next {
+        display: none;
+      }
+      a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @media (max-width: 1000px) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+
+}
