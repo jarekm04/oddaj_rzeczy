@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import decoration from "../../assets/Decoration.svg";
+import {useNavigate} from "react-router-dom";
 import {Link} from "react-router-dom";
 import * as yup from "yup";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import {auth} from "../../firebase";
-import {useNavigate} from "react-router-dom";
+import {db} from "../../firebase"
+import {ref, set} from "firebase/database";
+import decoration from "../../assets/Decoration.svg";
 
 
 const schemaRegister = yup.object().shape({
@@ -36,6 +38,10 @@ const Register = ({setIsUserLogged, registerEmail, registerPassword, registerCon
 
         createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
             .then(() => {
+                set(ref(db, 'UsersData/' + auth.currentUser.uid), {
+                    uid: auth.currentUser.uid,
+                    email: auth.currentUser.email,
+                })
                 navigate("/");
             })
             .catch((err) => alert(err.message));

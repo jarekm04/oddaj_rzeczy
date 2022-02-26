@@ -1,8 +1,11 @@
-import React, {useState} from 'react';
-
+import React, {useEffect, useState} from 'react';
+import {db} from "../../firebase";
+import {set, ref, get, onValue, child, push} from "firebase/database";
+import {getDatabase} from "firebase/database";
 
 const Panel = () => {
-    const [info , setInfo] = useState([]);
+    const [usersInfo, setUsersInfo] = useState([]);
+
 
     return (
         <section className="panel">
@@ -11,6 +14,9 @@ const Panel = () => {
                 <div className="users">
                     <h2 className="users__title">Użytkownicy</h2>
                     <hr/>
+                    {
+                        usersInfo.map((item, index) => <h1>{item}{index}</h1>)
+                    }
                 </div>
                 <div className="organizations">
                     <h2 className="organizations__title">Organizacje</h2>
