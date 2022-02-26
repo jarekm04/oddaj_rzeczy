@@ -9,10 +9,17 @@
   }
   .main {
     margin-top: 20px;
+    padding-left: 20px;
     .users {
+      margin-bottom: 30px;
       .users__title {
         font-size: 30px;
         font-style: italic;
+      }
+      .user__name {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
       }
     }
     .organizations {
