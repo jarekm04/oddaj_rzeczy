@@ -1,12 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import {auth, db, dbFireStore} from "../../firebase";
 import {set, ref, get, onValue, child, push, remove} from "firebase/database";
+import {useNavigate} from "react-router-dom";
 
 const Panel = () => {
     const [usersInfo, setUsersInfo] = useState([]);
+    const navigate = useNavigate();
+
+    const handleDeleteUser = (item) => {
+        remove(ref(db, `/UsersData/${item.uid}`));
+    };
 
     useEffect(() => { //
-        auth.onAuthStateChanged(() => {
+        auth.onAuthStateChanged((user) => {
                 onValue(ref(db, `UsersData`), (snapshot) => {
                     setUsersInfo([]);
                     const data = snapshot.val();
@@ -16,12 +22,11 @@ const Panel = () => {
                         });
                     }
                 });
+                if (user.uid !== "BejEMfotV7ZEcCuPWvNLnXnebuI2") {
+                    navigate("/");
+                }
         });
     }, []);
-
-    const handleDeleteUser = (item) => {
-        remove(ref(db, `/UsersData/${item.uid}`));
-    };
 
     return (
         <section className="panel">

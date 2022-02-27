@@ -16,7 +16,7 @@ import {BsPencilSquare} from "@react-icons/all-files/bs/BsPencilSquare";
 import {FiLogOut} from "@react-icons/all-files/fi/FiLogOut";
 import {FaHandHoldingHeart} from "@react-icons/all-files/fa/FaHandHoldingHeart";
 
-const Header = ({isUserLogged, setIsUserLogged}) => {
+const Header = ({isUserLogged, setIsUserLogged, isAdminLogged, setIsAdminLogged}) => {
     const [sidebar, setSidebar] = useState(false);
 
     const showSidebar = () => setSidebar(!sidebar);
@@ -24,6 +24,7 @@ const Header = ({isUserLogged, setIsUserLogged}) => {
     const handleSignOut = () => {
         signOut(auth).then(() => {
             setIsUserLogged(false);
+            setIsAdminLogged(false);
         }).catch(err => {
             alert(err.message);
         });
@@ -34,6 +35,14 @@ const Header = ({isUserLogged, setIsUserLogged}) => {
             <header className="header desktop">
                 {isUserLogged ? (
                     <section className="header__loginArea">
+                        {isAdminLogged ? (
+                            <Link
+                                to="/panel"
+                                className="panel__btn"
+                            >
+                                ADMIN PANEL
+                            </Link>
+                        ) : null}
                         <p className="userName">
                             Cześć {localStorage.getItem("userName")}
                         </p>
@@ -114,9 +123,18 @@ const Header = ({isUserLogged, setIsUserLogged}) => {
                 {sidebar ? <AiOutlineCloseCircle onClick={showSidebar}/>
                     : <GiHamburgerMenu onClick={showSidebar}/>
                 }
-                {isUserLogged ? <p className="userName">Cześć {localStorage.getItem("userName")}</p>
-                    : null
+                {isUserLogged ? (
+                    <p className="userName">Cześć {localStorage.getItem("userName")}</p>
+                    ) : null
                 }
+                {isAdminLogged ? (
+                    <Link
+                        to="/panel"
+                        className="panel__btn"
+                    >
+                        ADMIN PANEL
+                    </Link>
+                ) : null}
                 <nav className={sidebar? "header__mobileMenu active" : "header__mobileMenu"}>
                     <section className="mobileMenu__items">
                         <Link

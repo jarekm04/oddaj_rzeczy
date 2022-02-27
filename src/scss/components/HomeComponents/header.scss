@@ -19,7 +19,8 @@
       }
 
       .loginArea__btn,
-      .give__btn {
+      .give__btn,
+      .panel__btn {
         font-size: 0.875rem;
         padding: 9px 10px;
         color: $color-headerBtns;
@@ -34,9 +35,13 @@
         }
       }
 
-      .give__btn {
+      .give__btn,
+      .panel__btn {
         color: $color-darkGray;
         border: 1px solid $color-yellow;
+      }
+      .panel__btn {
+        margin-right: 10px;
       }
     }
 
@@ -84,6 +89,9 @@
     }
     .userName {
       margin: 1rem;
+      @media (max-width: 600px) {
+        font-size: 0.75rem;
+      }
     }
     .header__mobileMenu {
       display: flex;
@@ -120,12 +128,23 @@
         margin: 0 10px;
       }
     }
+    .panel__btn {
+      position: absolute;
+      left: 10%;
+      font-size: 0.875rem;
+      padding: 9px 10px;
+      text-decoration: none;
+      transition: .5s;
+      cursor: pointer;
+      color: $color-darkGray;
+      border: 1px solid $color-yellow;
+      @media (max-width: 600px) {
+        font-size: 0.7rem;
+        padding: 7px 8px;
+        left: 19%;
+      }
+    }
   }
-
-
-
-
-
   .header.desktop {
     display: none;
   }

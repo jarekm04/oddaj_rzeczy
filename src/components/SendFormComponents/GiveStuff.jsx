@@ -12,7 +12,7 @@ const GiveStuff = () => {
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
             if (!user) {
-                navigate("/");
+                navigate("/wylogowano");
             }
         });
     }, []);

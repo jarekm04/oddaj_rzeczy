@@ -11,6 +11,7 @@ import Panel from "./components/AdminPanel/Panel";
 
 function App() {
   const [isUserLogged, setIsUserLogged] = useState(false);
+  const [isAdminLogged, setIsAdminLogged] = useState(false);
 
   const [values, setValues] = useState({
     userEmail: '',
@@ -25,13 +26,17 @@ function App() {
       if (user) {
         setIsUserLogged(true);
       }
+      if (user.uid === "BejEMfotV7ZEcCuPWvNLnXnebuI2") {
+        setIsAdminLogged(true);
+        console.log("zalogowany admin");
+      }
     });
   }, []);
 
   return (
     <>
       <Router>
-        <Header isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged} />
+        <Header isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged} isAdminLogged={isAdminLogged} setIsAdminLogged={setIsAdminLogged} />
         <Routes>
           <Route path="/" element={<Welcome isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged}/>} />
           <Route path="/logowanie" element={<Login setIsUserLogged={setIsUserLogged} userEmail={values.userEmail} userPassword={values.userPassword} />} />
