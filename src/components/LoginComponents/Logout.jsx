@@ -1,6 +1,6 @@
 import React from 'react';
-import decoration from "../../assets/Decoration.svg";
 import {Link} from "react-router-dom";
+import decoration from "../../assets/Decoration.svg";
 
 const Logout = () => {
     return (

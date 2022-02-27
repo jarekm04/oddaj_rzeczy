@@ -24,7 +24,7 @@ const steps = [
 const SendStuffForm = () => {
     const [showSelect, setShowSelect] = useState(false);
     const [moveForward, setMoveForward] = useState(true);
-    const { register, handleSubmit, watch, getValues, formState: { errors } } = useForm();
+    const {register, handleSubmit, watch, getValues, formState: {errors}} = useForm();
 
     const handleShowSelect = () => {
         !showSelect ? setShowSelect(true) : setShowSelect(false);
@@ -32,7 +32,7 @@ const SendStuffForm = () => {
 
     const handleMoveForward = (item) => {
         if (Array.isArray(item)) {
-            const checkEveryItem =  item.every((el) => getValues(el));
+            const checkEveryItem = item.every((el) => getValues(el));
             if (checkEveryItem) {
                 if (getValues("phone").length === 9 && getValues("postCode").includes('-') && getValues("postCode").length === 6) {
                     navigation.next();
@@ -40,8 +40,7 @@ const SendStuffForm = () => {
                 } else {
                     setMoveForward(false);
                 }
-            }
-            else {
+            } else {
                 setMoveForward(false);
             }
         } else {
@@ -58,18 +57,30 @@ const SendStuffForm = () => {
 
     const handleMoveBackward = () => navigation.previous();
 
-    const { step, navigation } = useStep({
+    const {step, navigation} = useStep({
         steps,
         initialStep: 0,
     });
 
     const onSubmit = data => {
         console.log(data);
-        addDoc(collection(dbFireStore, "SendStuffForm"), data); //sending sendStuffForm to Firestore DB
+        addDoc(collection(dbFireStore, "SendStuffForm"), data);
         navigation.next();
     };
 
-    const props = { showSelect, setShowSelect, handleShowSelect, register, watch, getValues, navigation, moveForward, errors, handleMoveForward, handleMoveBackward };
+    const props = {
+        showSelect,
+        setShowSelect,
+        handleShowSelect,
+        register,
+        watch,
+        getValues,
+        navigation,
+        moveForward,
+        errors,
+        handleMoveForward,
+        handleMoveBackward
+    };
 
     const renderSwitch = () => {
         switch (step.id) {
@@ -84,7 +95,7 @@ const SendStuffForm = () => {
             case 'review':
                 return <Review {...props} />;
             case 'submit':
-                return <Submit />;
+                return <Submit/>;
             default:
                 return null;
         }
@@ -96,7 +107,6 @@ const SendStuffForm = () => {
             <img src={BearBg} alt="bear" className="sendStuffForm__bearBg"/>
         </form>
     )
-
 
 
 };

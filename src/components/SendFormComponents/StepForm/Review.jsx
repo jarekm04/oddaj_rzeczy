@@ -31,7 +31,9 @@ const Review = ({getValues, handleMoveBackward}) => {
                         </div>
                         <div className="gift__item">
                             <img src={icon4} alt="recycling"/>
-                            <p className="icon-text">{`dla lokalizacji: ${localization? localization : "brak"}`}</p>
+                            <p className="icon-text">
+                                {`dla lokalizacji: ${localization? localization : "brak"}`}
+                            </p>
                         </div>
                     </section>
                     <section className="userDetails">
@@ -72,8 +74,12 @@ const Review = ({getValues, handleMoveBackward}) => {
                     </section>
                 </div>
                 <div className="sendStuffForm__buttons">
-                    <div className="sendStuffForm__btn" onClick={handleMoveBackward}>Wstecz</div>
-                    <button type="submit" className="sendStuffForm__btn">Potwierdzam</button>
+                    <div className="sendStuffForm__btn" onClick={handleMoveBackward}>
+                        Wstecz
+                    </div>
+                    <button type="submit" className="sendStuffForm__btn">
+                        Potwierdzam
+                    </button>
                 </div>
             </div>
         </>

@@ -1,15 +1,20 @@
 import React, {useEffect, useState} from 'react';
-import decoration from "../../assets/Decoration.svg";
 import {Link, useNavigate} from "react-router-dom";
 import * as yup from "yup";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
-import {signInWithEmailAndPassword} from "firebase/auth";
 import {auth} from "../../firebase";
+import {signInWithEmailAndPassword} from "firebase/auth";
+import decoration from "../../assets/Decoration.svg";
 
 const schemaLogin = yup.object().shape({
-    email: yup.string().email("Proszę wpisać poprawny email").required("Proszę wpisać email"),
-    password: yup.string().min(6, "Hasło musi mieć min. 6 znaków").max(15, "Hasło może mieć max 15 znaków").required("Proszę wpisać hasło"),
+    email: yup.string()
+        .email("Proszę wpisać poprawny email")
+        .required("Proszę wpisać email"),
+    password: yup.string()
+        .min(6, "Hasło musi mieć min. 6 znaków")
+        .max(15, "Hasło może mieć max 15 znaków")
+        .required("Proszę wpisać hasło"),
 });
 
 const Login = ({setIsUserLogged, userEmail, userPassword}) => {
@@ -50,14 +55,22 @@ const Login = ({setIsUserLogged, userEmail, userPassword}) => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="login__data">
                     <label className="label">Email</label>
-                    <input type="text" {...register("email", {required: true, pattern: /^\S+@\S+$/i})}/>
+                    <input
+                        type="text"
+                        {...register("email", {required: true, pattern: /^\S+@\S+$/i})}
+                    />
                     {errors.email?.message && <p className="errorMsg">{errors.email?.message}</p>}
                     <label className="label">Hasło</label>
-                    <input type="password" {...register("password", {required: true, max: 15, min: 6})} />
+                    <input
+                        type="password"
+                        {...register("password", {required: true, max: 15, min: 6})}
+                    />
                     {errors.password?.message && <p className="errorMsg">{errors.password?.message}</p>}
                 </div>
                 <div className="login__buttons">
-                    <Link to="/rejestracja" className="register__btn">Załóż konto</Link>
+                    <Link to="/rejestracja" className="register__btn">
+                        Załóż konto
+                    </Link>
                     <button className="login__btn">Zaloguj się</button>
                 </div>
             </form>

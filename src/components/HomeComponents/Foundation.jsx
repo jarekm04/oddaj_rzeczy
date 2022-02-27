@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import PaginationData from "../../data/PAGINATION_DATA.json";
 import ReactPaginate from "react-paginate";
+import PaginationData from "../../data/PAGINATION_DATA.json";
 import decoration from "../../assets/Decoration.svg";
 
 const Foundation = () => {
@@ -60,8 +60,18 @@ const Foundation = () => {
                 >
                     Fundacjom
                 </div>
-                <div className="choice" onClick={() => {setData(PaginationData.organisations); setPageNumber(0)}}>Organizacjom pozarządowym</div>
-                <div className="choice" onClick={() => {setData(PaginationData.collections); setPageNumber(0)}}>Lokalnym zbiórkom</div>
+                <div
+                    className="choice"
+                    onClick={() => {setData(PaginationData.organisations); setPageNumber(0)}}
+                >
+                    Organizacjom pozarządowym
+                </div>
+                <div
+                    className="choice"
+                    onClick={() => {setData(PaginationData.collections); setPageNumber(0)}}
+                >
+                    Lokalnym zbiórkom
+                </div>
             </div>
             { displayData }
             <ReactPaginate
