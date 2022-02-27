@@ -1,26 +1,26 @@
 import React, {useEffect, useState} from 'react';
-import {onSnapshot, collection} from "firebase/firestore"
-import {db, dbFireStore} from "../../firebase";
+import {auth, db, dbFireStore} from "../../firebase";
 import {set, ref, get, onValue, child, push, remove} from "firebase/database";
-import {getDatabase} from "firebase/database";
 
 const Panel = () => {
     const [usersInfo, setUsersInfo] = useState([]);
 
-    const dbRef = ref(db);
-    useEffect(
-        () => {
-            get(child(dbRef, "UsersData")).then((snapshot) => {
-                let list = [];
-                snapshot.forEach(childSnapshot => {
-                    list.push(childSnapshot.val());
+    useEffect(() => { //
+        auth.onAuthStateChanged(() => {
+                onValue(ref(db, `UsersData`), (snapshot) => {
+                    setUsersInfo([]);
+                    const data = snapshot.val();
+                    if (data !== null) {
+                        Object.values(data).map((item) => {
+                            setUsersInfo((oldArray) => [...oldArray, item]);
+                        });
+                    }
                 });
-                setUsersInfo(list);
-            });
-        }, []);
+        });
+    }, []);
 
     const handleDeleteUser = (item) => {
-        console.log(item)
+        remove(ref(db, `/UsersData/${item.uid}`));
     };
 
     return (
