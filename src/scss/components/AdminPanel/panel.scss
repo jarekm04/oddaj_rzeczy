@@ -26,5 +26,21 @@
       font-size: 30px;
       font-style: italic;
     }
+    .forms {
+      font-size: 30px;
+      font-style: italic;
+      .form__box {
+        font-size: 1rem;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid $color-darkGray;
+        .box__title {
+          font-weight: bold;
+        }
+        p {
+          line-height: 1.2rem;
+        }
+      }
+    }
   }
 }
