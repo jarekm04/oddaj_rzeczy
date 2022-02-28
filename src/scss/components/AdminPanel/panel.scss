@@ -6,29 +6,35 @@
     text-align: center;
     line-height: 100px;
     background-color: #e5e5e5;
+    @media (max-width: 750px) {
+      height: 50px;
+      margin-top: 75px;
+      font-size: 24px;
+      line-height: 48px;
+    }
   }
   .main {
     margin-top: 20px;
     padding-left: 20px;
     .users {
       margin-bottom: 30px;
-      .users__title {
-        font-size: 30px;
-        font-style: italic;
-      }
       .user__name {
         font-size: 20px;
         font-weight: bold;
         margin-bottom: 20px;
+        @media (max-width: 450px) {
+          font-size: 16px;
+        }
       }
     }
-    .organizations {
+    .sendStuffForms,
+    .contactForms {
       font-size: 30px;
       font-style: italic;
-    }
-    .forms {
-      font-size: 30px;
-      font-style: italic;
+      .title {
+        font-size: 30px;
+        font-style: italic;
+      }
       .form__box {
         font-size: 1rem;
         padding: 10px;

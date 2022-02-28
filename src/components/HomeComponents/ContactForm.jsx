@@ -4,6 +4,8 @@ import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import axios from "axios";
 import decoration from "../../assets/Decoration.svg";
+import {addDoc, collection} from "firebase/firestore";
+import {dbFireStore} from "../../firebase";
 
 const schema = yup.object().shape({
     name: yup.string().required("Proszę wpisać imię").min(2, "Imię musi zawierać min. 2 znaki")
@@ -20,6 +22,7 @@ const ContactForm = () => {
 
     const onSubmit = (formData) => {
         setIsFormSent(true);
+        addDoc(collection(dbFireStore, "ContactForm"), formData);
 
         axios.post('https://fer-api.coderslab.pl/v1/portfolio/contact', formData)
             .then(response => {
