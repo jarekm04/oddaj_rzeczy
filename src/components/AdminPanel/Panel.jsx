@@ -120,7 +120,6 @@ const Panel = () => {
                                 <p>Imię: {item.name}, Email: {item.email}</p><br/>
                                 <p>Treść: {item.message}</p><br/>
                                 <button onClick={() => handleDeleteContactForm(item.id)}>Usuń formularz</button>
-
                             </div>
                         ))
                     }

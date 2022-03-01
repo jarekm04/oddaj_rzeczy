@@ -5,7 +5,7 @@ import insta from "../../assets/Instagram.svg";
 const Footer = () => {
     return (
         <footer className="footer">
-            <p className="footer__text">Copyright by Coders Lab</p>
+            <p className="footer__text">Copyright by JM</p>
             <div className="footer__media">
                 <a href="https://pl-pl.facebook.com/" target="_blank" className="main__btn">
                     <img src={fb} alt="fb"/>

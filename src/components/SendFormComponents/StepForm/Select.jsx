@@ -29,6 +29,7 @@ const Select = ({showSelect, handleShowSelect, register, getValues, handleMoveFo
                         className={showSelect ? "select-active" : "select-none"}
                         onClick={handleShowSelect}
                         {...register("bags", { required: true })}
+                        multiple=""
                     >
                         {options.map((option) => (
                             <option key={option} value={option} >
