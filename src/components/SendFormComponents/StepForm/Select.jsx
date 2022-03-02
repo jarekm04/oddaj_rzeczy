@@ -1,7 +1,10 @@
 import React from 'react';
+import useWindowDimensions from "../../Hooks/UseWindowDimensions";
+
 
 const Select = ({showSelect, handleShowSelect, register, getValues, handleMoveForward, moveForward, handleMoveBackward}) => {
     const options = [1, 2, 3, 4, 5];
+    const { width } = useWindowDimensions();
 
     return (
         <>
@@ -27,7 +30,7 @@ const Select = ({showSelect, handleShowSelect, register, getValues, handleMoveFo
                     <select
                         size="5"
                         className={showSelect ? "select-active" : "select-none"}
-                        onClick={handleShowSelect}
+                        onClick={width > 850 ? handleShowSelect : null}
                         {...register("bags", { required: true })}
                     >
                         {options.map((option) => (
