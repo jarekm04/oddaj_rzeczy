@@ -10,7 +10,7 @@ const firebaseConfig = {
     projectId: "oddaj-rzeczy-2f419",
     storageBucket: "oddaj-rzeczy-2f419.appspot.com",
     messagingSenderId: "656442124744",
-    appId: "1:656442124744:web:acfead251cc5670b8278fd"
+    appId: "YOUR-API-KEY"
 };
 
 const app = initializeApp(firebaseConfig);
