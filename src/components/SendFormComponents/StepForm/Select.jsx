@@ -9,7 +9,7 @@ const Select = ({showSelect, handleShowSelect, register, getValues, handleMoveFo
                 <p className="warn__title">Ważne!</p>
                 <p className="warn__subtitle">
                     Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz
-                    <a href="https://pl.wikipedia.org/wiki/Instrukcja" target="_blank">TUTAJ</a>.
+                    <a href="https://pl.wikipedia.org/wiki/Instrukcja" target="_blank"> TUTAJ</a>.
                 </p>
             </div>
             <div className="sendStuffForm__form">
@@ -29,7 +29,6 @@ const Select = ({showSelect, handleShowSelect, register, getValues, handleMoveFo
                         className={showSelect ? "select-active" : "select-none"}
                         onClick={handleShowSelect}
                         {...register("bags", { required: true })}
-                        multiple=""
                     >
                         {options.map((option) => (
                             <option key={option} value={option} >

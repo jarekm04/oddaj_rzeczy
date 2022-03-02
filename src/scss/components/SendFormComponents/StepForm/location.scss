@@ -23,9 +23,8 @@
       min-height: 38px;
       font-size: 1.1rem;
     }
-    @media (max-width: 465px) {
-      width: 220px;
-      font-size: 0.9rem;
+    @media (max-width: 850px) {
+      display: none;
     }
     &:after {
       content: url("../../../../assets/Icon-Arrow-Down.svg");
@@ -54,10 +53,6 @@
       font-size: 1.1rem;
       width: 270px;
     }
-    @media (max-width: 465px) {
-      width: 220px;
-      font-size: 0.9rem;
-    }
     option {
       background-color: #eeedeb;
       &:hover {
@@ -67,6 +62,16 @@
   }
   .select-none {
     display: none;
+    @media (max-width: 850px) {
+      display: block;
+      max-width: 250px;
+      font-size: 0.75rem;
+      background: $color-white;
+      option {
+        border-bottom: 1px solid $color-darkGray;
+        padding: 5px;
+      }
+    }
   }
   .box.rotateArrow {
     &:after {
