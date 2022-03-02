@@ -34,8 +34,8 @@
         width: 230px;
         margin-left: 15px;
       }
-      @media (max-width: 450px) {
-        width: 140px;
+      @media (max-width: 850px) {
+        display: none;
       }
       &:after {
         content: url("../../../../assets/Icon-Arrow-Down.svg");
@@ -64,7 +64,7 @@
     background-color: transparent;
     appearance: none;
     cursor: pointer;
-    overflow: auto;
+    overflow: visible;
     @media (max-width: 1000px) {
       top: 24%;
       left: 314px;
@@ -82,5 +82,15 @@
   }
   .select-none {
     display: none;
+    @media (max-width: 850px) {
+      display: block;
+      max-width: 250px;
+      font-size: 1.1rem;
+      background: $color-white;
+      option {
+        border-bottom: 1px solid $color-darkGray;
+        padding: 10px;
+      }
+    }
   }
 }

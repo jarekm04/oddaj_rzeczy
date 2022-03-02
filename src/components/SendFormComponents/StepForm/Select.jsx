@@ -1,7 +1,10 @@
 import React from 'react';
+import useWindowDimensions from "../../Hooks/UseWindowDimensions";
+
 
 const Select = ({showSelect, handleShowSelect, register, getValues, handleMoveForward, moveForward, handleMoveBackward}) => {
     const options = [1, 2, 3, 4, 5];
+    const { width } = useWindowDimensions();
 
     return (
         <>
@@ -9,7 +12,7 @@ const Select = ({showSelect, handleShowSelect, register, getValues, handleMoveFo
                 <p className="warn__title">Ważne!</p>
                 <p className="warn__subtitle">
                     Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz
-                    <a href="https://pl.wikipedia.org/wiki/Instrukcja" target="_blank">TUTAJ</a>.
+                    <a href="https://pl.wikipedia.org/wiki/Instrukcja" target="_blank"> TUTAJ</a>.
                 </p>
             </div>
             <div className="sendStuffForm__form">
@@ -27,7 +30,7 @@ const Select = ({showSelect, handleShowSelect, register, getValues, handleMoveFo
                     <select
                         size="5"
                         className={showSelect ? "select-active" : "select-none"}
-                        onClick={handleShowSelect}
+                        onClick={width > 850 ? handleShowSelect : null}
                         {...register("bags", { required: true })}
                     >
                         {options.map((option) => (

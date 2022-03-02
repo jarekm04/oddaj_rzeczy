@@ -1,10 +1,11 @@
 import React from 'react';
+import useWindowDimensions from "../../Hooks/UseWindowDimensions";
 
 const Location = ({showSelect, handleShowSelect, register, watch, getValues, handleMoveForward, moveForward, handleMoveBackward}) => {
     const cities = ["Poznań", "Warszawa", "Kraków", "Wrocław", "Katowice"];
     const helpgroups = ["dzieciom", "samotnym matkom", "bezdomnym", "niepełnosprawnym", "osobom starszym"];
     const optionalInput = watch('localizationSpecific');
-
+    const { width } = useWindowDimensions();
 
     return (
         <>
@@ -25,7 +26,7 @@ const Location = ({showSelect, handleShowSelect, register, watch, getValues, han
                     <select
                         size="5"
                         className={showSelect ? "select-active" : "select-none"}
-                        onClick={handleShowSelect}
+                        onClick={width > 850 ? handleShowSelect : null}
                         {...register("localization", { required: true })}
                     >
                         {cities.map((city) => (
