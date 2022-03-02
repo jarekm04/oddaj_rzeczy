@@ -15,4 +15,4 @@ npm start
 # Build for production
 npm run build
 
-If you want to run project you need to add your own Google Firebase & Weather API Key.
+If you want to run project you need to add your own Google Firebase.
