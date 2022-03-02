@@ -6,6 +6,8 @@ The application encourages the visitor to register and fill out a multi-step for
 # Tools and technologies
 React, Sass, Firebase Authentication, Realtime Database, Firestore Database, Firebase Hosting, Webpack.
 
+
+
 Quick Start
 # Install dependencies
 npm install
