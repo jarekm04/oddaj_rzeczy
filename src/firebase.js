@@ -3,7 +3,7 @@ import {getDatabase} from "firebase/database";
 import {getAuth} from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDoleuxDf5LFGqgL1d9LxrVQN5kvybD9X8",
+    apiKey: "...",
     authDomain: "oddaj-rzeczy-2f419.firebaseapp.com",
     databaseURL: "https://oddaj-rzeczy-2f419-default-rtdb.firebaseio.com",
     projectId: "oddaj-rzeczy-2f419",
